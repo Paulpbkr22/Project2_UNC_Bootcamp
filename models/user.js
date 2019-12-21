@@ -5,15 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     freezeTableName: true
   });
   console.log("This is User: " + User);
-  User.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
-    User.belongsTo(models.Post, {
-      onDelete: "cascade",
-      foreignKey : 'id',
-      targetKey: 'userId'
-    });
-  };
+
  
   return User;
 };
