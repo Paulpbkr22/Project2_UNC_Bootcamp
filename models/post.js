@@ -9,8 +9,8 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Post = sequelize.define("Post", {
-    userId: DataTypes.INTEGER,
-    companyId: DataTypes.INTEGER,
+    // userId: DataTypes.INTEGER,
+    // companyId: DataTypes.INTEGER,
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -47,13 +47,14 @@ module.exports = function(sequelize, DataTypes) {
     // A Post can't be created without an Author due to the foreign key constraint
     // console.log("line 42 "+typeof models.Company);
     Post.belongsTo(db.Company, {
-      foreignKey: 'id',
-      sourcekey: 'companyId'
-    
+      foreignKey: {
+        allowNull: false
+      }
       });
     Post.belongsTo(db.User, {
-        foreignKey: 'id',
-        sourceKey: 'userId'
+      foreignKey: {
+        allowNull: false
+      }
     })
   };
   return Post;
