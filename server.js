@@ -3,43 +3,6 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 
 var db = require("./models");
-console.log(db)
-var Company = db.Company;
-var User = db.User;
-var Post = db.Post;
-User.associate = function(models) {
-  // Associating Author with Posts
-  // When an Author is deleted, also delete any associated Posts
-  User.belongsTo(models.Post, {
-    onDelete: "cascade",
-    foreignKey : 'id',
-    targetKey: 'userId'
-  });
-};
-Company.associate = function(models) {
-  // Associating Author with Posts
-  // When an Author is deleted, also delete any associated Posts
-  Company.hasMany(models.Post, {
-    onDelete: "cascade",
-    foreignKey: "id",
-    targetKey:"companyId",
-    freezeTableName: true
-  });
-};
-Post.associate = function(db) {
-  // We're saying that a Post should belong to an Author
-  // A Post can't be created without an Author due to the foreign key constraint
-  // console.log("line 42 "+typeof models.Company);
-  Post.hasMany(Company, {
-    foreignKey: 'id',
-    sourcekey: 'companyId'
-  
-    });
-  Post.hasMany(User, {
-      foreignKey: 'id',
-      sourceKey: 'userId'
-  })
-};
 
 var app = express();
 var PORT = process.env.PORT || 3000;

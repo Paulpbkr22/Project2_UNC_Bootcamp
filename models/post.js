@@ -1,4 +1,5 @@
-//
+// var Company = require("./company");
+// var User = require("./user");
 // var db = require("../models");
 // module.exports = (sequelize, DataTypes) => {
 //   const UserTask = sequelize.define('UserTask', {
@@ -22,8 +23,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     },
+    // freezeTableName: true
+  }, {
     freezeTableName: true
-  },  {});
+
+  }, {});
   console.log("This is Post: " + Post);
   
   // User.associate = function(models) {
@@ -36,7 +40,22 @@ module.exports = function(sequelize, DataTypes) {
   //   });
   // };
   
-  
+  Post.associate = function(db) {
+    // console.log(Object.keys(db));
+    // console.log(Company);
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    // console.log("line 42 "+typeof models.Company);
+    Post.belongsTo(db.Company, {
+      foreignKey: 'id',
+      sourcekey: 'companyId'
+    
+      });
+    Post.belongsTo(db.User, {
+        foreignKey: 'id',
+        sourceKey: 'userId'
+    })
+  };
   return Post;
   
 };
