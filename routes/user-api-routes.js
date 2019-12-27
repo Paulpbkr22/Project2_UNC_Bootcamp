@@ -26,8 +26,13 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/users", function(req, res) {
-    db.User.create(req.body).then(function(dbUser) {
+  app.post("/api/user", function(req, res) {
+    db.User.create({
+      email: req.body.email,
+      name: req.body.name,
+      jobTitle: req.body.job
+      
+    }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
