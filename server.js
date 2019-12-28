@@ -16,6 +16,7 @@ app.use(express.static("public"));
 require("./routes/post-api-routes")(app);
 require("./routes/user-api-routes")(app);
 require("./routes/company-api-routes")(app);
+// require("./routes/invite-api-routes")(app);
 
 // Handlebars
 // app.engine(

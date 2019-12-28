@@ -26,8 +26,9 @@ app.get("/api/post/:id", function(req, res) {
 
 // Route for updating a post
   app.put("/api/post/:id", function(req, res) {
-    db.Post.update(
-      req.body.body,
+    db.Post.update({
+
+      body: req.body.body,},
       {
         where: {
           id: req.params.id
