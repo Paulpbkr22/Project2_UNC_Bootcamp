@@ -2,7 +2,8 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Post = sequelize.define("Post", {
-   
+    userId: DataTypes.STRING,
+    companyId: DataTypes.STRING,
     title: {
       type: DataTypes.STRING,
       allowNull: false,

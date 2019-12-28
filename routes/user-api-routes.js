@@ -25,12 +25,12 @@ module.exports = function(app) {
       res.json(dbUser);
     });
   });
-
+// Route for creating a new user
   app.post("/api/user", function(req, res) {
     db.User.create({
       email: req.body.email,
       name: req.body.name,
-      jobTitle: req.body.job
+      jobTitle: req.body.jobTitle
       
     }).then(function(dbUser) {
       res.json(dbUser);

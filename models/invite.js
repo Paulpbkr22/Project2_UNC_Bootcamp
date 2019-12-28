@@ -1,3 +1,7 @@
+var md = require("md5");
+
+
+
 module.exports = function(sequelize, DataTypes){
     var Invite = sequelize.define("Invite", {
         hash: DataTypes.STRING,
