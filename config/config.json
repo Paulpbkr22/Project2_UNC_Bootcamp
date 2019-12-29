@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "Rootpassword",
+    "database": "speakeasy_db",
     "host": "localhost",
     "dialect": "mysql"
   },
