@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Speakeasy</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
@@ -28,20 +28,20 @@
         <h2>Welcome <span class="member-name"></span></h2>
       </div>
     </div>
-  </div>
+  
   <div class ="row">
       <div class="col-12">
         <div class="posts">
             <form>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Company</label>
-                  <input type="email" class="form-control" id="postCompanyInput" aria-describedby="emailHelp">
+                  <input type="text" class="form-control" id="postTitle" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Post</label>
                     <textarea class="form-control" id="postCompanyText" rows="3"></textarea>
                   </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="postingSubmit"class="btn btn-primary">Submit</button>
               </form>
           
         </div>
@@ -55,7 +55,7 @@
       </div>
     </div>
   </div>
-
+</div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
   <script
