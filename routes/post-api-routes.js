@@ -39,13 +39,15 @@ app.get("/api/post/:id", function(req, res) {
   });
 
   app.post("/api/post", function(req, res){
+    console.log("line 42 in post.js" +req.body);
     db.Post.create({
         title: req.body.title,
         body: req.body.body,
-        // UserId: req.body.userId
-        // CompanyId: req.body.companyId
+        UserId: req.body.userId,
+        CompanyId: req.body.companyId
         
       }).then(function(dbUser) {
+        // console.log(dbUser);
         res.json(dbUser);
     });
   });
