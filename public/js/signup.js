@@ -17,8 +17,8 @@ $(document).ready(function() {
       var userData = {
         email: emailInput.val().trim(),
         password: passwordInput.val().trim(),
-        name: nameInput.val().trim(),
-        jobTItle: jobInput.val().trim()
+        name: nameInput.val().trim().toUpperCase(),
+        jobTitle: jobInput.val().trim()
       };
       console.log(userData);
   
