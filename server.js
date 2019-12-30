@@ -25,7 +25,7 @@ require("./routes/htmlRoutes")(app)
 require("./routes/post-api-routes")(app);
 require("./routes/user-api-routes")(app);
 require("./routes/company-api-routes")(app);
-// require("./routes/invite-api-routes")(app);
+require("./routes/invite-api-routes")(app);
 
 
 

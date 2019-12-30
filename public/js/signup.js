@@ -18,15 +18,16 @@ $(document).ready(function() {
         email: emailInput.val().trim(),
         password: passwordInput.val().trim(),
         name: nameInput.val().trim().toUpperCase(),
-        jobTitle: jobInput.val().trim()
+        jobTitle: jobInput.val().trim(),
+        inviteCode: inviteCode.val().trim()
       };
       console.log(userData);
   
-      if (!userData.email || !userData.password) {
+      if (!userData.email || !userData.password|| !userData.inviteCode) {
         return;
       }
       // If we have an email and password, run the signUpUser function
-      signUpUser(userData.email, userData.password, userData.name, userData.jobTItle);
+      signUpUser(userData);
       emailInput.val("");
       passwordInput.val("");
       nameInput.val("");
@@ -35,13 +36,8 @@ $(document).ready(function() {
   
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
-    function signUpUser(email, password, name, jobTItle) {
-      $.post("/api/signup", {
-        email: email,
-        password: password,
-        name: name,
-        jobTItle: jobTItle
-      }).then(function(data) {
+    function signUpUser(user) {
+      $.post("/api/signup", user).then(function(data) {
         window.location.replace(data);
         // If there's an error, handle it by throwing up a boostrap alert
       }).catch(handleLoginErr);

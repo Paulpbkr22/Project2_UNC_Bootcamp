@@ -1,5 +1,5 @@
 'use strict';
-
+var db = require("../models");
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*
@@ -24,3 +24,15 @@ module.exports = {
     */
   }
 };
+db.Invite.update({
+  beenUsed: true
+},{
+  where:{
+    hash: "-FTeZeCv"
+
+  },
+  returning: true
+}
+).then(function(results){
+  console.log(results);
+})

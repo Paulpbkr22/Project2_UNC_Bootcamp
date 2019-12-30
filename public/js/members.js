@@ -1,11 +1,16 @@
+// var md5 = require("md5");
+
 $(document).ready(function() {
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
     console.log(this);
     var userEmail="";
+    var userId = "";
+    var userName ="";
     $.get("/api/user_data").then(function(res){
       userEmail =res.email
       userId = res.id
+      userName = res.name
     })
     // var userID =$(this).id;
     $.get("/api/user/").then(function(data) {
@@ -19,6 +24,18 @@ $(document).ready(function() {
           
         }
       }
+    });
+    $("#invitePal").on("click", function(){
+      // Create hash and displays to user then stores in Invtes model
+        $.post("/api/invite",{
+          user: userName,
+          UserId: userId
+        }
+        ).then(function(results){
+          console.log(results);
+        })
+
+
     });
     $("#postingSubmit").on("click", function(){
       console.log("inside postinSumbit")
