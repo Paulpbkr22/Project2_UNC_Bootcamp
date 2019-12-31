@@ -1,9 +1,7 @@
 // var md5 = require("md5");
 
 $(document).ready(function() {
-    // This file just does a GET request to figure out which user is logged in
-    // and updates the HTML on the page
-    console.log(this);
+   
     var userEmail="";
     var userId = "";
     var userName ="";
@@ -12,15 +10,12 @@ $(document).ready(function() {
       userId = res.id
       userName = res.name
     })
-    // var userID =$(this).id;
+    
     $.get("/api/user/").then(function(data) {
       console.log(data);
       for(var i=0; i<data.length; i++){
         if(data[i].email===userEmail){
           $(".member-name").text(data[i].name);
-          // for(var j=0; j<data.Posts.length; j++){
-          //   $(".member-post").text(data[i].Posts)
-          // }
           
         }
       }
@@ -32,31 +27,35 @@ $(document).ready(function() {
           UserId: userId
         }
         ).then(function(results){
-          console.log(results);
+        //  Display results in a modal here.
         })
 
 
     });
-    $("#postingSubmit").on("click", function(){
-      console.log("inside postinSumbit")
-      var postTitle = $("postTitle")
-      console.log(postTitle)
-      var companyName = $("#postCompanyInput");
-      var postTextInput = $("#postCompanyText");
-      console.log(postTextInput)
-      // $.post("/app/post",{
-      //   title: postTitle,
-      //   body: postTextInput,
+    $("#createCompany").on("click", function(){
+      console.log("inside createCompnay")
+      // var postTitle = $("postTitle")
+      // console.log(postTitle)
+      // var companyName = $("#postCompanyInput");
+      // var postTextInput = $("#postCompanyText");
+      $("#addCompanyModal").modal("show");
+      var addCompanyName = $("#companyNameAdd");
+      var newCompany = addCompanyName.val().trim();
+      console.log(newCompany);
+      console.log(addCompanyName);
+      
+      $("#companySubmit").on("click", function(){
+        console.log(addCompanyName);
+    
+      $.post("/api/company",{
+        name: newCompany
       //   // UserId: userId
 
-      // }).then(function(data){
-        // console.log("line34" + data);
-        // window.location.replace(data);
-        // for(var j=0; j<data.Posts.length; j++){
-        //     $(".member-post").text(data[i].Posts)
-        //   }
+      }).then(function(data){
+        console.log(data);
         
-      // })
+      });
+    });
     });
   });
   // $.post("/api/signup", {

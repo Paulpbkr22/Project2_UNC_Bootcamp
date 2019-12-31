@@ -1,10 +1,6 @@
 $(document).ready(function() {
 // Create Company
-$(".createCompany").on("click", function(){
 
-
-
-});
 
 
 // Get Company

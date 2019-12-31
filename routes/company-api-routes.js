@@ -23,11 +23,16 @@ module.exports = function(app) {
   });
 // Route for creating a company
   app.post("/api/company", function(req, res) {
+    console.log("requested");
     db.Company.create({
-      name: req.body.name})
-      .then(function(dbCompnay) {
-      res.json(dbCompnay);
-    });
+      name: req.body.name}
+      )
+      .then(function(dbCompany) {
+      res.json(dbCompany);
+    }).catch(function(err){
+      if (err) throw err;
+      res.send("failure");
+  });
   });
 
  
