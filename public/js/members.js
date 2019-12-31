@@ -33,35 +33,50 @@ $(document).ready(function() {
 
     });
     $("#createCompany").on("click", function(){
-      console.log("inside createCompnay")
+      console.log("inside createCompany")
       // var postTitle = $("postTitle")
       // console.log(postTitle)
       // var companyName = $("#postCompanyInput");
       // var postTextInput = $("#postCompanyText");
       $("#addCompanyModal").modal("show");
-      var addCompanyName = $("#companyNameAdd");
-      var newCompany = addCompanyName.val().trim();
-      console.log(newCompany);
-      console.log(addCompanyName);
       
-      $("#companySubmit").on("click", function(){
-        console.log(addCompanyName);
-    
-      $.post("/api/company",{
-        name: newCompany
-      //   // UserId: userId
 
-      }).then(function(data){
-        console.log(data);
+     
+      // console.log(companyAdd);
+      $(document).on("click", "#companySubmit", function(){
+        var addCompanyName = $("#companyNameAdd");
+        var newCompany = addCompanyName.val();
+        console.log(newCompany);
+       
+        console.log(addCompanyName);
+        getCompanyName(newCompany);
+        // createCompany(companyAdd);
+        // companyAdd.val("");
+      // $.post("/api/company",{
+      //   name: newCompany
+      // //   // UserId: userId
+
+      // }).then(function(data){
+      //   console.log(data);
         
-      });
+      // });
     });
     });
   });
-  // $.post("/api/signup", {
-  //   email: email,
-  //   password: password,
-  //   name: name,
-  //   jobTItle: jobTItle
-  // }).then(function(data) {
-  //   window.location.replace(data);
+  function getCompanyName(newName){
+    var companyAdd= {
+      name: newName
+    }
+    createCompany(companyAdd);
+
+  }
+
+  function createCompany(company) {
+    $.post("/api/company", company).then(function(data) {
+     console.log(data)
+      // If there's an error, handle it by throwing up a boostrap alert
+    }).catch(function(err){
+      if (err) throw err;
+      res.send("failure");
+  });
+  }
