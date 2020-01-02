@@ -4,6 +4,8 @@ $(document).ready(function() {
     console.log("before on click");
     // When the signup button is clicked, we validate the email and password are not blank
     $(".create").on("click", function(event) {
+      
+
       var emailInput = $("#email");
       console.log(emailInput);
     
@@ -11,6 +13,7 @@ $(document).ready(function() {
       var nameInput = $("#nameInput");
       console.log(nameInput);
       var jobInput= $("#jobTitle");
+      var inviteCode = $("#invitationcode");
     console.log("inside sign up");
       event.preventDefault();
       console.log("inside sign up form");

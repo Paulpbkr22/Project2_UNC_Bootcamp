@@ -5,6 +5,9 @@ body {
   background-color: black;
   
 }
+.company-name{
+  color:white;
+}
 
 #contact {
   width: 100%;

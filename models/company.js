@@ -3,7 +3,8 @@ module.exports = function (sequelize, DataTypes) {
     // Giving the Author model a name of type STRING
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      unique: true
     }
   }, {
     freezeTableName: true

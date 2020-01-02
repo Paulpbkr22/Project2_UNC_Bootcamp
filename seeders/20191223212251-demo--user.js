@@ -24,15 +24,12 @@ module.exports = {
     */
   }
 };
-db.Invite.update({
-  beenUsed: true
-},{
-  where:{
-    hash: "-FTeZeCv"
-
-  },
-  returning: true
-}
-).then(function(results){
+db.Post.create({
+        title: "best place",
+        body: "best place to work",
+        UserId: 1,
+        CompanyId: 22
+        
+      }).then(function(results){
   console.log(results);
 })
