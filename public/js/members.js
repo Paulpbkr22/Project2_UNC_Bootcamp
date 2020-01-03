@@ -70,10 +70,14 @@ var lookingForCompanyValue = lookingForCompany.val().trim();
 console.log(lookingForCompanyValue);
 
 
-getExistingCompany(lookingForCompanyValue);
+// getExistingCompany(lookingForCompanyValue);
 
+var companySearch= {
+  name: lookingForCompanyValue
+}
 
-  window.location.href ="http://localhost:3030/HTML/company.html";
+    // companySearched = companySearch.replace(/[{}]/g, "");
+  window.location.href ="http://localhost:3030/company?name=" + lookingForCompanyValue;
   // console.log(data);
   // $(".company-name").text(data.name);
   // $(".company-post").text(data.Posts[0].body);
@@ -90,44 +94,7 @@ getExistingCompany(lookingForCompanyValue);
 
 
 });
-function getExistingCompany(searchedCompany){
-  var companySearch= {
-    name: searchedCompany
-  }
-  console.log(companySearch);
 
-  searchForCompany(companySearch);
-
-}
-
-function searchForCompany(companySearch) {
-$.ajax({
-  url:"/api/company/" + companySearch.name,
-  method: "GET",
-}).then(function(data){
-  console.log(data)
-  console.log(data[0].name);
-      console.log(data[0].Posts[0].body);
-      $(".company-name").text(data.name);
-      $(".company-post").text(data.Posts[0].body);
-    
-
-})
-
-
-//   $.get("/api/company", comapnySearch).then(function(data) {
-//     // window.location.href ="http://localhost:3030/HTML/company.html";
-//     console.log(data);
-//     console.log(data[0].name);
-//     console.log(data[0].Posts[0].body);
-//     $(".company-name").text(data.name);
-//     $(".company-post").text(data.Posts[0].body);
-  
-//   }).catch(function(err){
-//     if (err) throw err;
-//     res.send("failure");
-// });
-}
 
   function getCompanyName(newName){
     var companyAdd= {

@@ -1,4 +1,40 @@
 $(document).ready(function() {
+  getParams()
+function getParams(){
+  let params = new URLSearchParams(document.location.search.substring(1));
+  let name = params.get("name"); // is the string "Jonathan"
+console.log(name);
+getExistingCompany(name);
+}
+
+function getExistingCompany(searchedCompany){
+  var companySearch= {
+    name: searchedCompany
+  }
+  console.log(companySearch);
+
+  searchForCompany(companySearch);
+
+}
+
+function searchForCompany(companySearch) {
+$.ajax({
+  url:"/api/company/" + companySearch.name,
+  method: "GET",
+}).then(function(data){
+  console.log(data)
+  console.log(data[0].name);
+      console.log(data[0].Posts[0].body);
+      $(".company-name").text(data.name);
+      $(".company-post").text(data.Posts[0].body);
+    
+
+})
+}
+
+
+
+  
 // Create Company
 
 
