@@ -24,9 +24,15 @@ $.ajax({
 }).then(function(data){
   console.log(data)
   console.log(data[0].name);
+  var company = data[0].name
+  var posts = data[0].Posts;
       console.log(data[0].Posts[0].body);
-      $(".company-name").text(data.name);
-      $(".company-post").text(data.Posts[0].body);
+      $(".company-name").text(company);
+for(var i =0; i<posts.length; i++){
+
+  $(".company-post").append(data[0].Posts[i].body);
+}
+      
     
 
 })
