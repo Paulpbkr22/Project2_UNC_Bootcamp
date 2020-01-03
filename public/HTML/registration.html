@@ -45,17 +45,32 @@ maybe
 
     <div class="content contact-wrapper"></div>
 
-    <form class="form-horizontal" role="form" method="post" action="contact.php">
+    <form class="signup" class="form-horizontal" role="form" method="post" action="/api/user">
 
       <div class="form-group">
         <div class="col-sm-14">
-          <input type="text" class="form-control" id="username" placeholder="USERNAME/EMAIL" name="" value="">
+          <input type="text" class="form-control" id="email" placeholder="EMAIL">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-14">
+          <input type="text" class="form-control" id="jobTitle" placeholder="JOB TITLE" >
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-14">
+          <input type="text" class="form-control" id="nameInput" placeholder="NAME" >
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-14">
-          <input type="password" class="form-control" id="password" placeholder="PASSWORD" name="" value="">
+          <input type="password" class="form-control" id="password" placeholder="PASSWORD" >
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-14">
+          <input type="text" class="form-control" id="invitationcode" placeholder="Invitation code" >
         </div>
       </div>
 
@@ -80,14 +95,18 @@ maybe
 
       <div class="direct-contact-container signin-right">
         <ul class="contact-list">
-          <li class="list-item"?><span class="contact-text-place">Already have an acount? <a href="#">Sign In</a></span></li>
+          <li class="list-item"?><span class="contact-text-place">Already have an acount? <a href="loginsignup.html">Sign In</a></span></li>
         </ul>
         <!--Already have an account? <a href="#">Sign In</a></div>-->
       </div>
 
   </section>
 </div>
-  <script src="" async defer></script>
+  <script src="../js/signup.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 </body>
 
 </html>

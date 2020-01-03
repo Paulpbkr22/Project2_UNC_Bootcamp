@@ -1,17 +1,32 @@
-var md = require("md5");
-
+// var md5 = require("md5");
+var shortid = require("shortid");
 
 
 module.exports = function(sequelize, DataTypes){
     var Invite = sequelize.define("Invite", {
-        hash: DataTypes.STRING,
+        // hash: {
+        //     type: DataTypes.STRING,
+        //     unique: true
+        // },
+        hash:{
+            type: DataTypes.STRING,
+            primaryKey: true,
+            defaultValue: shortid.generate(),
+            unique: true
+        },
         user: DataTypes.STRING,
-        beenUsed: DataTypes.BOOLEAN
+        beenUsed:{
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        }
     }, {freezeTableName: true
     });
     Invite.associate = function(models){
         Invite.belongsTo(models.User, {
-            onDelete:"cascade"
+            onDelete:"cascade",
+            foreignKey:{
+                allowNull: false
+            }
         });
     }
     return Invite;
