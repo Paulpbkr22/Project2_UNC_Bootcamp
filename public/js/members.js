@@ -20,6 +20,39 @@ $(document).ready(function() {
         }
       }
     });
+
+    $.get("/api/user/").then(function (data) {
+      console.log(data);
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].email === userEmail) {
+          console.log("before name")
+          $(".member-name").text(data[i].name);
+          console.log("after name");
+          var userIdNumber={
+            id: data[i].id
+          }
+          console.log(userIdNumber)
+         displayUserPosts(userIdNumber);
+  
+        }
+      }
+    });
+    function displayUserPosts(idForPosts){
+      "inside displayUserPosts function"
+      console.log(idForPosts)
+    $.ajax({
+      url: "/api/user/" + idForPosts.id,
+      method: "GET",
+    }).then(function (data) {
+      console.log(data);
+      var userPosts = data.Posts
+      for(var k=0; k<userPosts.length; k++){
+        $(".memberposts-title").append(userPosts[k].title);
+        $(".member-posts").append(userPosts[k].body);
+      }
+    })
+  }
+
     $("#invitePal").on("click", function(){
       // Create hash and displays to user then stores in Invtes model
         $.post("/api/invite",{
