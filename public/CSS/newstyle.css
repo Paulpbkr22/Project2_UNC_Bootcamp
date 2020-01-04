@@ -1,8 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  overflow-y: scroll;
+  overflow: scroll;
   background-color: black;
+  height: 700px;
   
 }
 .company-name{
@@ -146,6 +147,12 @@ input[type="email"] , input[type="password"]{
   background-color: #111;
   font-family: "Special Elite", cursive;
 }
+
+input[type=email] {
+  border-color: white;
+  border: 5px !important;
+}
+
 input[type="checkbox"]{
   float: left;
   margin-right: 5px;
@@ -293,6 +300,7 @@ input[type="checkbox"]{
   max-width: 400px;
   font-family: 'Special Elite', cursive;
   font-weight: 400;
+  margin-bottom: 100px;
 }
 
 .form-control, textarea {
@@ -314,6 +322,7 @@ input[type="checkbox"]{
   width: 400px;
   height: 34px;
   transition: all .2s ease-in-out;
+  margin-bottom: 80px;
 }
 
 .send-text {
@@ -323,9 +332,9 @@ input[type="checkbox"]{
   letter-spacing: 2px;
 }
 
-.button:hover {
+/*.button:hover {
   transform: rotate(360deg);
-}
+}*/
 
 /* ------ RIGHT SIDE OF CONTACT ------ */
 
@@ -333,6 +342,7 @@ input[type="checkbox"]{
   max-width: 400px;
   float: right;
   margin-top: 65px;
+
 }
 
 /* ------ ADDRESS/PHONE/EMAIL ------ */
