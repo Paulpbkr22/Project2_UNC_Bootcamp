@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Rye|Special+Elite&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="../CSS/newstyle.css"> -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script src="/path/to/infinite-scroll.pkgd.min.js"></script>
+
+  <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed)  */
+     .row.content {height: 1500px}
+    
+    .navbar {
+        height: 11%;
+        background-color: grey;
+    }
+    html, body {
+      background-color: black;
+      height: 100%;
+    }
+
+    .post-location {
+        text-align: center;
+        height: 100%;
+        margin-left: -10%;
+    }
+
+    
+    .feed {
+        text-align: center;
+    }
+
+
+   .create-post {
+     padding: 20px;
+     text-align: center;
+   }
+    .search-bar {
+      max-width: 29%;
+      margin-left: 70%;
+      margin-top: 8px;
+    }
+
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+      background-color: grey;
+      padding: 10px;
+}
+
+     #titleText {
+      font-family: "Special Elite", cursive;
+      color: white;
+      text-align: center;
+    }
+
+
+ 
+ 
+
+    .notifRef {
+      margin-left: 800px;
+      margin-top: 8px;
+      font-size: 20px;
+    }
+    #searchBtn {
+      margin-top: 8px;
+    }
+
+    /* Scroll Div */
+    div.scroll { 
+                margin:4px, 4px -50px 0; 
+                padding:4px; 
+                background-color: green; 
+                width: 2000px; 
+                height: 100%; 
+                overflow-x: hidden; 
+                overflow-x: auto; 
+                text-align:justify; 
+            } 
+
+    
+     /* Set gray background color and 100% height */
+    .sidenav {
+      height: 100%;
+      background-image: linear-gradient(135deg,  #e49d05 5%, #363536 95%);
+      margin-right: 15%;
+    }
+
+    #profileSection {
+      margin-bottom: 60%;
+    }
+    
+   
+
+    #postText, #profile, #favComps {
+      font-family: "Special Elite", cursive;
+      font-size: 40px;
+      color: white;
+    }
+
+    
+    /* Set black background color, white text and some padding */
+    
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;}  
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            
+          
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+            </ul>
+            <h1 id = "titleText">SpeakEasy</h1>
+
+            
+
+            <!-- <div class = "notifRef" id = "notif">
+            <a class = "notifications" id = "notifications">Notifications</a>
+
+          </div> -->
+           <div class="input-group search-items">
+              <input type="text" class="form-control search-bar" id = "searchBar" placeholder="Search Blog..">
+              <span class="input-group-btn">
+                <button class="btn btn-default search-btn" id = "searchBtn" type="button">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>
+      </div>
+          </div>
+        </div>
+      </nav>
+
+
+<!-- This is the left Div, profile and favorites -->
+
+
+    <div class="col-sm-2 sidenav">
+      <div class="input-group" id = "profileSection">
+        <h4 id = "profile">Profile</h4>
+        <div>
+          Profile Picture
+        </div>
+      </div>
+      <br><br><br>
+      <h4 id = "favComps">Favorite Companies</h4>
+      <ul class="nav">
+        <li class="active"><a href="#section1">Home</a></li>
+      </ul><br>
+      <br><br>
+      <div>
+
+      </div>
+    </div>
+
+
+    <!-- This is the Div for the Right side, create post and post location -->
+<!-- 
+    <div class="container col-md-7" id = "feedDiv" -->
+  <!-- data-infinite-scroll='{ "path": ".pagination__next", "append": ".post", "history": false }'> -->
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-9 right-nav" id = "rightNav">
+    
+    <div class = "create-post" id = "createPost">
+    <h4 id = "postText">Create a Post</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea id = "comment-input" class="form-control" rows="5" required style = "max-width: 96%; margin-left: 4%;"></textarea>
+        </div>
+        <button type="submit" id = "postSubmit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+
+
+      <div class="container post-location scroll" id = "postLocation">
+       
+       <h2>sapfiwejfweiojpfpqowefjpwei jfpoweijfpjwefjw9ejf89wejf98wj e8f jwe8fj w9efj9wejf98wejf8jwe9f8j w98fjqwe9jfiojdsfijwefiheu8rfheurbgpeiojvfu ewnf wefiw epifjweiofjweqfuqewnf wenpfweoifjpweoifjpweoifjwpeofjpwioejfiowejfpoiewfpoijweifjewiop jfiwj poifj weofj pweoifj wepofjwepoifjweofij weofjqwoiefjiwejf ow jwejf owejpfowjepifjweiofjiwoejfpoooooooooooooooooooooooooooooooooijwioejppppppppppjfpoweijfpjwefjw9ejf89wejf98wj e8f jwe8fj w9efj9wejf98wejf8jwe9f8j w98fjqwe9jfiojdsfijwefiheu8rfheurbgpeiojvfu ewnf wefiw epifjweiofjweqfuqewnf wenpfweoifjpweoifjpweoifjwpeofjpwioejfiowejfpoiewfpoijweifjewiop jfiwj poifj weofj pweoifj wepofjwepoifjweofij weofjqwoiefjiwejf ow jwejf owejpfowjepifjweiofjiwoejfpoooooooooooooooooooooooooooooooooijwioejppppppppppjfpoweijfpjwefjw9ejf89wejf98wj e8f jwe8fj w9efj9wejf98wejf8jwe9f8j w98fjqwe9jfiojdsfijwefiheu8rfheurbgpeiojvfu ewnf wefiw epifjweiofjweqfuqewnf wenpfweoifjpweoifjpweoifjwpeofjpwioejfiowejfpoiewfpoijweifjewiop jfiwj poifj weofj pweoifj wepofjwepoifjweofij weofjqwoiefjiwejf ow jwejf owejpfowjepifjweiofjiwoejfpoooooooooooooooooooooooooooooooooijwioejppppppppppjfpoweijfpjwefjw9ejf89wejf98wj e8f jwe8fj w9efj9wejf98wejf8jwe9f8j w98fjqwe9jfiojdsfijwefiheu8rfheurbgpeiojvfu ewnf wefiw epifjweiofjweqfuqewnf wenpfweoifjpweoifjpweoifjwpeofjpwioejfiowejfpoiewfpoijweifjewiop jfiwj poifj weofj pweoifj wepofjwepoifjweofij weofjqwoiefjiwejf ow jwejf owejpfowjepifjweiofjiwoejfpoooooooooooooooooooooooooooooooooijwioejppppppppppjfpoweijfpjwefjw9ejf89wejf98wj e8f jwe8fj w9efj9wejf98wejf8jwe9f8j w98fjqwe9jfiojdsfijwefiheu8rfheurbgpeiojvfu ewnf wefiw epifjweiofjweqfuqewnf wenpfweoifjpweoifjpweoifjwpeofjpwioejfiowejfpoiewfpoijweifjewiop jfiwj poifj weofj pweoifj wepofjwepoifjweofij weofjqwoiefjiwejf ow jwejf owejpfowjepifjweiofjiwoejfpoooooooooooooooooooooooooooooooooijwioejpppppppppp</h2>
+      </div>
+    </div>
+
+    <div></div>
+
+
+    
+    <!-- </div> -->
+      
+   
+              <br>
+            </div>
+          </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+
+  
+ 
+  
+
+
+
+<footer class="container-fluid footer">
+  <p>Footer Text</p>
+</footer>
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  
+  <script type = "text/javascript">
+  
+  
+
+
+
+
+
+
+
+
+              </script>
+
+
+                
+
+
+
+  
+ 
+</body>
+
+
+</html>
