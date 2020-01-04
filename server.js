@@ -22,8 +22,9 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+require("./routes/createseeds")(app);
 require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app)
+require("./routes/htmlRoutes")(app);
 require("./routes/post-api-routes")(app);
 require("./routes/user-api-routes")(app);
 require("./routes/company-api-routes")(app);
