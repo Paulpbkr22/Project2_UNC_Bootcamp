@@ -20,6 +20,39 @@ $(document).ready(function() {
         }
       }
     });
+
+    $.get("/api/user/").then(function (data) {
+      console.log(data);
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].email === userEmail) {
+          console.log("before name")
+          $(".member-name").text(data[i].name);
+          console.log("after name");
+          var userIdNumber={
+            id: data[i].id
+          }
+          console.log(userIdNumber)
+         displayUserPosts(userIdNumber);
+  
+        }
+      }
+    });
+    function displayUserPosts(idForPosts){
+      "inside displayUserPosts function"
+      console.log(idForPosts)
+    $.ajax({
+      url: "/api/user/" + idForPosts.id,
+      method: "GET",
+    }).then(function (data) {
+      console.log(data);
+      var userPosts = data.Posts
+      for(var k=0; k<userPosts.length; k++){
+        $(".memberposts-title").append(userPosts[k].title);
+        $(".member-posts").append(userPosts[k].body);
+      }
+    })
+  }
+
     $("#invitePal").on("click", function(){
       // Create hash and displays to user then stores in Invtes model
         $.post("/api/invite",{
@@ -70,10 +103,14 @@ var lookingForCompanyValue = lookingForCompany.val().trim();
 console.log(lookingForCompanyValue);
 
 
-getExistingCompany(lookingForCompanyValue);
+// getExistingCompany(lookingForCompanyValue);
 
+var companySearch= {
+  name: lookingForCompanyValue
+}
 
-  window.location.href ="http://localhost:3030/HTML/company.html";
+    // companySearched = companySearch.replace(/[{}]/g, "");
+  window.location.href ="http://localhost:3030/company?name=" + lookingForCompanyValue;
   // console.log(data);
   // $(".company-name").text(data.name);
   // $(".company-post").text(data.Posts[0].body);
@@ -90,44 +127,7 @@ getExistingCompany(lookingForCompanyValue);
 
 
 });
-function getExistingCompany(searchedCompany){
-  var companySearch= {
-    name: searchedCompany
-  }
-  console.log(companySearch);
 
-  searchForCompany(companySearch);
-
-}
-
-function searchForCompany(companySearch) {
-$.ajax({
-  url:"/api/company/" + companySearch.name,
-  method: "GET",
-}).then(function(data){
-  console.log(data)
-  console.log(data[0].name);
-      console.log(data[0].Posts[0].body);
-      $(".company-name").text(data.name);
-      $(".company-post").text(data.Posts[0].body);
-    
-
-})
-
-
-//   $.get("/api/company", comapnySearch).then(function(data) {
-//     // window.location.href ="http://localhost:3030/HTML/company.html";
-//     console.log(data);
-//     console.log(data[0].name);
-//     console.log(data[0].Posts[0].body);
-//     $(".company-name").text(data.name);
-//     $(".company-post").text(data.Posts[0].body);
-  
-//   }).catch(function(err){
-//     if (err) throw err;
-//     res.send("failure");
-// });
-}
 
   function getCompanyName(newName){
     var companyAdd= {
