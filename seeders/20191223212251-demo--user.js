@@ -2,7 +2,7 @@
 var db = require("../models");
 var shortid = require("shortid");
 module.exports = {
-  createSeeds: (callback)=>{
+  createSeeds: (req, callback)=>{
     db.User.create({
       email: req.body.email,
       password: req.body.password,
