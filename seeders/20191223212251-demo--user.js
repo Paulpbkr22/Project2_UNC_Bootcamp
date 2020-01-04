@@ -2,6 +2,17 @@
 var db = require("../models");
 var shortid = require("shortid");
 module.exports = {
+  createSeeds: (callback)=>{
+    db.Invite.create({
+      hash: shortid.generate(),
+      beenUsed: false,
+      UserId: 1,
+    }
+      ).then(callback)
+      // console.log(dbInvite.hash);
+      
+  },
+  
   up: (queryInterface, Sequelize) => {
     /*
       Add altering commands here.
@@ -24,6 +35,7 @@ module.exports = {
       return queryInterface.bulkDelete('People', null, {});
     */
   }
+  
 };
 // db.Post.create({
 //         title: "best place",
@@ -33,12 +45,4 @@ module.exports = {
         
 //       }).then(function(results){
 //   console.log(results);
-  db.Invite.create({
-    hash: shortid.generate(),
-    beenUsed: false,
-    UserId: 1,
-  }
-    ).then(function(dbInvite){
-    // console.log(dbInvite.hash);
-    console.log(dbInvite)
-});
+  
