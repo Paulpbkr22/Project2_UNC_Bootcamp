@@ -58,11 +58,11 @@ $(document).ready(function () {
       console.log(companyIdNow);
       var company = data[0].name;
       var posts = data[0].Posts;
-      console.log(data[0].Posts[0].body);
+      // console.log(data[0].Posts[0].body);
       $(".company-name").text(company);
       for (var i = 0; i < posts.length; i++) {
-
-        $(".company-post").append(data[0].Posts[i].body);
+        $(".company-post-title").append(posts[i].title);
+        $(".company-post").append(posts[i].body);
       }
 
 
@@ -122,8 +122,7 @@ $(document).ready(function () {
     }).then(function (data) {
       console.log("line34" + data);
       // window.location.replace(data);
-      $(".company-post").append(data.body);
-      $(".company-post").append(data.body);
+      
       window.location.href = "http://localhost:3030/company?name=" + name;
     }).catch(function (err) {
       if (err) throw err;
