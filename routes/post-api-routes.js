@@ -43,8 +43,8 @@ app.get("/api/post/:id", function(req, res) {
     db.Post.create({
         title: req.body.title,
         body: req.body.body,
-        UserId: req.body.userId,
-        CompanyId: req.body.companyId
+        UserId: req.body.UserId,
+        CompanyId: req.body.CompanyId
         
       }).then(function(dbUser) {
         // console.log(dbUser);
