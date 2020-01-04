@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Rootpassword",
-    "database": "speakeasy_db2",
+    "database": "speakeasy_db",
     "host": "localhost",
     "dialect": "mysql"
   },

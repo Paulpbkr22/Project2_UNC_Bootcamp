@@ -110,7 +110,7 @@ var companySearch= {
 }
 
     // companySearched = companySearch.replace(/[{}]/g, "");
-  window.location.href ="http://localhost:3030/company?name=" + lookingForCompanyValue;
+  window.location.href ="https://floating-harbor-41249.herokuapp.com/company?name=" + lookingForCompanyValue;
   // console.log(data);
   // $(".company-name").text(data.name);
   // $(".company-post").text(data.Posts[0].body);
