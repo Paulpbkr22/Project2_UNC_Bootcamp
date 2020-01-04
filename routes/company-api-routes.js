@@ -1,4 +1,5 @@
 var db = require("../models");
+var URL = require('url').URL;
 
 module.exports = function(app) {
   // app.get("/api/company", function(req, res) {
