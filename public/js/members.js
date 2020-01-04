@@ -103,29 +103,13 @@ var lookingForCompanyValue = lookingForCompany.val().trim();
 console.log(lookingForCompanyValue);
 
 
-// getExistingCompany(lookingForCompanyValue);
+
 
 var companySearch= {
   name: lookingForCompanyValue
 }
-
-    // companySearched = companySearch.replace(/[{}]/g, "");
   window.location.href ="https://floating-harbor-41249.herokuapp.com/company?name=" + lookingForCompanyValue;
-  // console.log(data);
-  // $(".company-name").text(data.name);
-  // $(".company-post").text(data.Posts[0].body);
-
-  // These calls work. CREATE LOOP FOR POSTS AFTER FIGURING OUT ROUTE
   
-  // var results = data[0].Posts
-  // for(var i=0; i<results.length, i++){
-    // console.log(results[i].body);
-  // }
-  
-
-
-
-
 });
 
 
@@ -140,7 +124,7 @@ var companySearch= {
   function createCompany(company) {
     $.post("/api/company", company).then(function(data) {
      console.log(data)
-      // If there's an error, handle it by throwing up a boostrap alert
+     
     }).catch(function(err){
       if (err) throw err;
       res.send("failure");
