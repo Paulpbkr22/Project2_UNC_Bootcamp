@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes){
         Invite.belongsTo(models.User, {
             onDelete:"cascade",
             foreignKey:{
-                allowNull: true
+                allowNull: false
             }
         });
     }
