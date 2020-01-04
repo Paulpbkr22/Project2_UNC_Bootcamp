@@ -20,6 +20,9 @@ $(document).ready(function() {
         }
       }
     });
+    $.get("/api/post")
+
+
     $("#invitePal").on("click", function(){
       // Create hash and displays to user then stores in Invtes model
         $.post("/api/invite",{
