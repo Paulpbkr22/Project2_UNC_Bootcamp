@@ -22,14 +22,16 @@ $(document).ready(function () {
     }
   });
 
+onLoad()
+  function onLoad(){
   let params = new URLSearchParams(document.location.search.substring(1));
   console.log(params);
-
-
-
-
-
   getParams(params)
+}
+
+
+
+  
   function getParams(params) {
 
     queryname = params.get("name"); // is the string "Jonathan"
@@ -112,7 +114,7 @@ $(document).ready(function () {
   // }
   function makePostCall(passedObject) {
     console.log(JSON.stringify(passedObject));
-    console.log(name);
+    // console.log(name);
     //  $.post("/api/post", passedObject).then(function(data){
       // console.log("line 85 " + createPostObject);
      
@@ -131,4 +133,11 @@ $(document).ready(function () {
       res.send(err);
     });
   }
+$("#companypageSearchButton").on("click", function(){
+  var companyPageSearch = $("#lookingForCompanyPage")
+  var companyPageSearchValue = companyPageSearch.val().trim();
+  window.location.href = "http://localhost:3030/company?name=" + companyPageSearchValue;
+
+})
+
 });
