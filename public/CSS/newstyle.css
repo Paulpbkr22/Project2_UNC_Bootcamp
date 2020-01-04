@@ -35,7 +35,7 @@ body {
   max-width: 800px;
 }
 
-/*------ LANDING PAGE ------*/
+/*------ LANDING PAGE/ABOUT US ------*/
 
 .navbar-nav {
   color: black;
@@ -47,6 +47,10 @@ body {
   position: relative;
   right: 40px;
   bottom: 8px;
+}
+
+.navbar-header {
+  font-family: "Rye", cursive;
 }
 
 #landing-page	{
@@ -76,7 +80,7 @@ html	{
 
 h1	{
 
-	font-weight: 700 !important;
+	font-weight: 400 !important;
 	font-size: 5em !important;
 }
 
@@ -89,6 +93,17 @@ border-bottom: 1px solid rgba(0,0,0,0.2) !important;
 
 h3 {
   top: 50px;
+}
+
+/*------ ABOUT US ------*/
+.about-header {
+  font-family: "rye", cursive;
+  color: white;
+}
+
+.about-blurb {
+  font-family: "Special Elite", cursive;
+  color: gold;
 }
 
 /*------ NEW REG PAGE ------*/
