@@ -3,6 +3,13 @@ var db = require("../models");
 var shortid = require("shortid");
 module.exports = {
   createSeeds: (callback)=>{
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password,
+      name: req.body.name,
+      jobTitle: req.body.jobTitle
+
+    }).then(function(){
     db.Invite.create({
       hash: shortid.generate(),
       beenUsed: false,
@@ -10,7 +17,7 @@ module.exports = {
     }
       ).then(callback)
       // console.log(dbInvite.hash);
-      
+  });
   },
   
   up: (queryInterface, Sequelize) => {
