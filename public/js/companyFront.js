@@ -4,7 +4,7 @@ $(document).ready(function () {
   var userEmail = "";
   var userId = "";
   var userName = "";
-  var name = "";
+  var queryname = "";
   $.get("/api/user_data").then(function (res) {
     userEmail = res.email
     userId = res.id
@@ -32,9 +32,9 @@ $(document).ready(function () {
   getParams(params)
   function getParams(params) {
 
-    name = params.get("name"); // is the string "Jonathan"
+    queryname = params.get("name"); // is the string "Jonathan"
     console.log(name);
-    getExistingCompany(name);
+    getExistingCompany(queryname);
   }
 
   function getExistingCompany(searchedCompany) {
@@ -105,16 +105,17 @@ $(document).ready(function () {
 
 
   })
-  function createPostObject(companyName, postTextInput, userId, passedCompanyId) {
+  // function createPostObject(companyName, postTextInput, userId, passedCompanyId) {
    
-    console.log("line 80 " +JSON.stringify(createPostObject));
-    makePostCall(createPostObject)
-  }
+  //   console.log("line 80 " +JSON.stringify(createPostObject));
+  //   makePostCall(createPostObject)
+  // }
   function makePostCall(passedObject) {
     console.log(JSON.stringify(passedObject));
+    console.log(name);
     //  $.post("/api/post", passedObject).then(function(data){
       // console.log("line 85 " + createPostObject);
-      "line 117"
+     
     $.ajax({
       url: "/api/post",
       data: passedObject,
@@ -122,8 +123,8 @@ $(document).ready(function () {
     }).then(function (data) {
       console.log("line34" + data);
       // window.location.replace(data);
-      
-      window.location.href = "http://localhost:3030/company?name=" + name;
+      console.log(name);
+      window.location.href = "http://localhost:3030/company?name=" + queryname;
     }).catch(function (err) {
       if (err) throw err;
       console.log(err);
