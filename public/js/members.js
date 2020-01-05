@@ -47,8 +47,10 @@ $(document).ready(function () {
       console.log("line 47" + (JSON.stringify(data)));
       var userPosts = data.Posts
       for (var k = 0; k < userPosts.length; k++) {
+        $(".company-name").append(userPosts[k].Company.name);
         $(".memberposts-title").append(userPosts[k].title);
         $(".member-posts").append(userPosts[k].body);
+       
       }
     })
   }
