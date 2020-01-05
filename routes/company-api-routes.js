@@ -18,7 +18,12 @@ module.exports = function(app) {
       where: {
         name: req.params.name
       },
-      include: [db.Post]
+      include: [{
+        model: db.Post, 
+        include: [{
+          model: db.User
+        }]
+      }]
     }).then(function(dbCompany) {
       res.json(dbCompany);
     });
