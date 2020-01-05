@@ -5,64 +5,81 @@
   <title>Speakeasy</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="../CSS/newstyle.css">
 
 
+  <link href="https://fonts.googleapis.com/css?family=Rye|Special+Elite&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
 
-<body>
+
+
+<body style = "background-color: black;">
+  
+
   <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container">
+      <!------ GROUP ALL BRANDED STUFF ------>
       <div class="navbar-header">
-        <a class="navbar-brand" href="/logout">
-          Logout
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!--<a class="navbar-brand" href="#">SpeakEasy</a>-->
+        <a class="navbar-brand" href="#">
+          <img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
+          <span style="display: inline-block;">SpeakEasy</span>
         </a>
-          <a class="active" href="https://floating-harbor-41249.herokuapp.com/membersgt">Home</a>
-          <!-- <a href="#about">About</a> -->
-          <a href="/HTML/contact.html">Contact</a>
-          <input type="text" placeholder="Search.." id="lookingForCompany">
-          <button id="companySearchButton">Submit</button>
-          <!-- method="GET" action="company.html" -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="navbar-brand" href="/logout"></li>
+            Logout
+          </a>
+        </ul>
       </div>
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
+
+
+  
+  <div class="container" style = "background-color: black;">
+        <h2 id = "membWelcome">Welcome<span class="member-name"></span></h2>
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-sm-6">
           <button id="invitePal">Invite a pal!</button>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class = "col-sm-6">
           <button id="createCompany">Add a company</button>
         </div>
       </div>
-    </div>
+  
 
+    <br><br><br><br>
 
-    <div class="row">
-      <div class="col-12">
-
-      </div>
-    </div>
     <div class="row">
       <div class="col-12">
         <div class="posts">
-          <h2>YourPosts</h2>
-          <span class="company-name"></span>
-            <span class="memberposts-title"></span>
-            <span class="member-posts"></span>
+          <h2 class = "company-post">Posts</h2>
+            <span class="company-name"></span>
 
         </div>
       </div>
     </div>
+
+    <div class = "col-md-12">
+      <div class="card-body" id = "cardBody">
+        
+      </div>
+    </div>
   </div>
+  
   <div id="addCompanyModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -88,6 +105,10 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
   <!-- bootstrap -->
 
