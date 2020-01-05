@@ -7,27 +7,73 @@
   <title>Login to SpeakEasy!</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
 
   <link href="https://fonts.googleapis.com/css?family=Rye|Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../CSS/newstyle.css">
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    crossorigin="anonymous"></script>-->
+  <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    crossorigin="anonymous"></script>-->
+  <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>-->
+    <!--<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>-->
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>-->
 </head>
 
-<body>
+<nav class="navbar navbar-default">
   <div class="container">
+
+
+    <!------ GROUP ALL BRANDED STUFF ------>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!--<a class="navbar-brand" href="#">SpeakEasy</a>-->
+      <a class="navbar-brand" href="#">
+        <img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
+        <span style="display: inline-block;">SpeakEasy</span>
+      </a>
+    </div>
+
+
+    <!------ NAVBAR LINKS ------>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+        <li><a href="">About SpeakEasy</a></li>
+        <li><a href="">Contact</a></li>
+
+<!--  IT'S A LOGIN PAGE, WHY DO YOU NEED THESE? -->
+      <!--</ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"></i>Sign Up </a></li>
+        <li><a href="#">Login </i></a></li>
+
+      </ul>-->
+    </div>
+  </div>
+</nav>
+
+<body>
+  <div class="RegContainer">
     <div class="login">
-      <div class="container form-horizontal">
+      <div class="RegContainer form-horizontal">
         <h1>Who Is It?</h1>
         <input type="email" placeholder="EMAIL" id="emailLogin">
         <input type="password" placeholder="PASSWORD" id="passwordLogin"><br>
@@ -38,7 +84,7 @@
       </div>
     </div>
     <div class="register">
-      <div class="container">
+      <div class="RegContainer">
         
         <h2>Mum is the word...</h2>
         <p>Wanna get in?  You'll need a password.  Click below to get the nitty gritty...</p>
