@@ -18,11 +18,17 @@ module.exports = function (app) {
       where: {
         id: req.params.id
       },
-      include: [db.Post]
+      include: [{
+        model: db.Post, 
+        include: [{
+          model: db.Company
+        }]
+      }]
     }).then(function (dbUser) {
       res.json(dbUser);
     });
   });
+
   // Route for creating a new user
   app.post("/api/user", function (req, res) {
     db.Invite.findAll({

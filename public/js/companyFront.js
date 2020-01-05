@@ -54,7 +54,7 @@ onLoad()
       url: "/api/company/" + companySearch.name,
       method: "GET",
     }).then(function (data) {
-      console.log(data)
+      console.log(JSON.stringify(data));
       console.log(data[0].name);
       companyIdNow = data[0].id;
       console.log(companyIdNow);
@@ -126,7 +126,7 @@ onLoad()
       console.log("line34" + data);
       // window.location.replace(data);
       console.log(name);
-      window.location.href = "http://localhost:3030/company?name=" + queryname;
+      window.location.href = "https://floating-harbor-41249.herokuapp.com/company?name=" + queryname;
     }).catch(function (err) {
       if (err) throw err;
       console.log(err);
@@ -136,7 +136,7 @@ onLoad()
 $("#companypageSearchButton").on("click", function(){
   var companyPageSearch = $("#lookingForCompanyPage")
   var companyPageSearchValue = companyPageSearch.val().trim();
-  window.location.href = "http://localhost:3030/company?name=" + companyPageSearchValue;
+  window.location.href = "https://floating-harbor-41249.herokuapp.com/company?name=" + companyPageSearchValue;
 
 })
 

@@ -44,7 +44,7 @@ $(document).ready(function() {
       url: "/api/user/" + idForPosts.id,
       method: "GET",
     }).then(function (data) {
-      console.log(data);
+      console.log("line 47" +(JSON.stringify(data)));
       var userPosts = data.Posts
       for(var k=0; k<userPosts.length; k++){
         $(".memberposts-title").append(userPosts[k].title);
@@ -110,7 +110,7 @@ var companySearch= {
 }
 
     // companySearched = companySearch.replace(/[{}]/g, "");
-  window.location.href ="http://localhost:3030/company?name=" + lookingForCompanyValue;
+  window.location.href ="https://floating-harbor-41249.herokuapp.com/company?name=" + lookingForCompanyValue;
   // console.log(data);
   // $(".company-name").text(data.name);
   // $(".company-post").text(data.Posts[0].body);
