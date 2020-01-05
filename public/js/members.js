@@ -61,6 +61,8 @@ $(document).ready(function() {
         }
         ).then(function(results){
         //  Display results in a modal here.
+        console.log(results.hash);
+        $("#inviteCode").text("Whisper Code: " + results.hash);
         })
 
 
