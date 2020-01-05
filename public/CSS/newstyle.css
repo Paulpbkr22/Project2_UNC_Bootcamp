@@ -107,6 +107,35 @@ h3 {
   color: gold;
 }
 
+/*------ MEET TEAM ------*/
+
+.column {
+  float: left;
+  width: 25%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+}
+
+.teamroom {
+  padding: 0 16px;
+}
+
+
+.title {
+  color: white;
+}
+
 /*------ NEW REG PAGE ------*/
 .container{
   width: 80%;
@@ -144,19 +173,10 @@ input[type="email"] , input[type="password"]{
   padding: 10px;
   margin-bottom: 30px;
   border: none;
-  background-color: #111;
+  background-color: rgb(36, 35, 35);
   font-family: "Special Elite", cursive;
 }
 
-input[type=email] {
-  border-color: white;
-  border: 5px !important;
-}
-
-input[type="checkbox"]{
-  float: left;
-  margin-right: 5px;
-}
 .login span{
   float: left
 }
