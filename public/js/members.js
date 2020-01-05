@@ -146,3 +146,24 @@ $.ajax({
       res.send("failure");
   });
   }
+
+
+
+  // Create Card 
+
+  let data = [
+    {name: 'name0', description: 'description', date: 'XX/XX/XXXX'},
+    {name: 'name1', description: 'description', date: 'XX/XX/XXXX'},
+    {name: 'name2', description: 'description', date: 'XX/XX/XXXX'},
+]
+data.forEach(res => {
+    let card = document.createElement("div");
+    let name = document.createTextNode('Name:' + res.name + ', ');
+    card.appendChild(name);
+    let description = document.createTextNode('Description:' + res.description + ', ');
+    card.appendChild(description);
+    let date = document.createTextNode('date:' + res.date);
+    card.appendChild(date);
+    let container = document.querySelector("#container");
+    container.appendChild(card);
+});

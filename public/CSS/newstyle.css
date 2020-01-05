@@ -1,12 +1,70 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
   background-color: black;
-  
+  height: 100%;
+  width: 100%;
 }
+
+
+.fullBack {
+  background-color: black;
+}
+
 .company-name{
   color:white;
+}
+/* Button Style */
+
+#invitePal {
+  margin-left: 40%;
+
+  border-color: purple;
+  border-width: .35em;
+  color: black;
+  box-shadow: 0 0 40px 40px orange inset, 0 0 0 0 orange;
+  transition: all 500ms ease-in-out;
+  
+}
+#invitePal:hover {
+  box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
+}
+
+
+#invitePal, #createCompany {
+  height: 73px;
+  width: 25%;
+  font-weight: bold;
+  font-size: larger;
+}
+
+#createCompany {
+  margin-left: 40%;
+
+  border-color: purple;
+  border-width: .35em;
+  color: black;
+  box-shadow: 0 0 40px 40px orange inset, 0 0 0 0 orange;
+  transition: all 500ms ease-in-out;
+}
+
+#createCompany:hover {
+  box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
+}
+
+#invitePal:hover {
+  box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
+}
+
+
+
+.navLinks {
+  margin-left: 10px;
+}
+
+.company-post {
+  text-align: center;
 }
 
 #contact {
@@ -28,6 +86,13 @@ body {
   margin-bottom: 25px;
 }
 
+#lookingForCompany {
+  margin-left: 60%;
+  width: 18%
+}
+#companySearchButton {
+  position: relative;
+}
 .contact-wrapper {
   margin: 0 auto;
   padding-top: 20px;
