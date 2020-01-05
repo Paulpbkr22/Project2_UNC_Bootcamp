@@ -117,15 +117,11 @@ onLoad()
     // console.log(name);
     //  $.post("/api/post", passedObject).then(function(data){
       // console.log("line 85 " + createPostObject);
-     
-    $.ajax({
-      url: "/api/post",
-      data: passedObject,
-      method: "POST",
-    }).then(function (data) {
+      // $.post("/api/signup", user)
+    $.post("/api/post", passedObject).then(function (data) {
       console.log("line34" + data);
       // window.location.replace(data);
-      console.log(name);
+      // console.log(name);
       window.location.href = "https://floating-harbor-41249.herokuapp.com/company?name=" + queryname;
     }).catch(function (err) {
       if (err) throw err;
