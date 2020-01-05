@@ -54,7 +54,7 @@ onLoad()
       url: "/api/company/" + companySearch.name,
       method: "GET",
     }).then(function (data) {
-      console.log(data)
+      console.log(JSON.stringify(data));
       console.log(data[0].name);
       companyIdNow = data[0].id;
       console.log(companyIdNow);
