@@ -65,7 +65,7 @@ onLoad()
       for (var i = 0; i < posts.length; i++) {
         $(".company-post-title").append(posts[i].title);
         $(".company-post").append(posts[i].body);
-        (".userNamePost").append(posts[i].User.name);
+        $(".userNamePost").append(posts[i].User.name);
       }
 
 
