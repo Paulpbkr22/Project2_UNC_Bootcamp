@@ -1,10 +1,11 @@
 $(document).ready(function () {
-
+  var companyCardObject =[];
   var companyIdNow;
   var userEmail = "";
   var userId = "";
   var userName = "";
   var queryname = "";
+  $("#cardBody").empty();
   $.get("/api/user_data").then(function (res) {
     userEmail = res.email
     userId = res.id
@@ -63,10 +64,28 @@ onLoad()
       // console.log(data[0].Posts[0].body);
       $(".company-name").text(company);
       for (var i = 0; i < posts.length; i++) {
+        companyCard ={
+          userName : posts[i].User.name,
+          postTitle: posts[i].title,
+          postBody: posts[i].body
+        }
+        companyCardObject.push(companyCard);
+
         $(".company-post-title").append(posts[i].title);
         $(".company-post").append(posts[i].body);
         $(".userNamePost").append(posts[i].User.name);
       }
+      companyCardObject.forEach(res => {
+        let card = document.createElement("div");
+        let name = document.createTextNode('Username:' + res.userName + ', ');
+        card.appendChild(name);
+        let comment = document.createTextNode('Title:' + res.postTitle + ', ');
+        card.appendChild(comment);
+        let post = document.createTextNode('Post:' + res.postBody);
+        card.appendChild(post);
+        let container = document.querySelector("#cardBody");
+        container.appendChild(card);
+      });
 
 
 
