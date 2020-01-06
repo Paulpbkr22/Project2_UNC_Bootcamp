@@ -66,9 +66,18 @@ li {
 }
 
 
-
 .navLinks {
   margin-left: 10px;
+}
+
+.companySearchField {
+  padding-left: 50px;
+  margin-top: 10px;
+}
+
+.logoutButton {
+  padding-left: 200px;
+  margin-top: 10px;
 }
 
 .company-post {
@@ -96,7 +105,8 @@ li {
 
 #lookingForCompany {
   margin-left: 60%;
-  width: 18%
+  width: 18%;
+  margin-bottom: 30px;
 }
 #companySearchButton {
   position: relative;
@@ -223,6 +233,31 @@ height:100%;
 }
 
 .login ,.register{width: 50%}
+
+.signup {
+  width: 400px;
+  margin:auto;
+  font-family: "Special Elite", cursive;
+}
+
+.passwordField {
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  height: 36px;
+}
+
+.createButton {
+color: #fff !important;
+font-family: "Special Elite", cursive;
+text-transform: uppercase;
+text-decoration: none;
+background: #ed3330;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+}
 
 /*------ LOGIN ------*/
 #emailLogin{
