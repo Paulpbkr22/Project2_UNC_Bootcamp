@@ -141,15 +141,29 @@ $("#companySearchButton").on("click", function () {
     name: lookingForCompanyValue
   }
 
-  
-  window.location.href = "/company?name=" + lookingForCompanyValue;
+  checkforExistingComnpany(lookingForCompanyValue)
+  // window.location.href = "/company?name=" + lookingForCompanyValue;
   
 
 
 
 
 });
+function checkforExistingComnpany(userSearchedCompany){
+  $.ajax({
+    url: "/api/company/" + userSearchedCompany,
+    method: "GET",
+  }).then(function (data) {
+    if(!data.length){
+      $("#emailDupModal").modal("toggle");
+    }
+    else{
+      window.location.href = "/company?name=" + userSearchedCompany;
+    }
 
+
+  })
+}
 
 function getCompanyName(newName) {
   var companyAdd = {

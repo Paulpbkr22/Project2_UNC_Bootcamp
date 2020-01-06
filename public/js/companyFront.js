@@ -146,7 +146,7 @@ onLoad()
       console.log("line34" + data);
       // window.location.replace(data);
       console.log(name);
-      window.location.href = "https://floating-harbor-41249.herokuapp.com/company?name=" + queryname;
+      window.location.href = "/company?name=" + queryname;
     }).catch(function (err) {
       if (err) throw err;
       console.log(err);
@@ -156,7 +156,7 @@ onLoad()
 $("#companypageSearchButton").on("click", function(){
   var companyPageSearch = $("#lookingForCompanyPage")
   var companyPageSearchValue = companyPageSearch.val().trim();
-  window.location.href = "https://floating-harbor-41249.herokuapp.com/company?name=" + companyPageSearchValue;
+  window.location.href = "/company?name=" + companyPageSearchValue;
 
 })
 
