@@ -57,6 +57,7 @@ $(document).ready(function () {
         // $(".company-name").append(userPosts[k].Company.name);
         // $(".memberposts-title").append(userPosts[k].title);
         // $(".member-posts").append(userPosts[k].body);
+      }
         userCompanyCardObject.forEach(res => {
           let card = document.createElement("div");
           // card.setAttribute(title, "Test");
@@ -71,7 +72,7 @@ $(document).ready(function () {
           let container = document.querySelector("#cardBody");
           container.appendChild(card);
         });
-      }
+      
     })
   }
 
