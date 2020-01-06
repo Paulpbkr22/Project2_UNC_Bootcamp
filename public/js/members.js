@@ -60,8 +60,8 @@ $(document).ready(function () {
         userCompanyCardObject.forEach(res => {
           let card = document.createElement("div");
           // card.setAttribute(title, "Test");
-          card.setAttribute(width, "100%");
-          card.setAttribute(height, "290");
+          // card.setAttribute(width, "200px");
+          // card.setAttribute(height, "290px");
           let name = document.createTextNode('Company Name:' + res.companyname + ', ');
           card.appendChild(name);
           let comment = document.createTextNode('Title:' + res.postTitle + ', ');
