@@ -61,6 +61,8 @@ $(document).ready(function () {
       }
     })
   }
+
+  
 userCompanyCardObject.forEach(res => {
     let card = document.createElement("div");
     // card.setAttribute(title, "Test");
