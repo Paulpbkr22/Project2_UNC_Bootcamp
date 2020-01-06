@@ -57,26 +57,26 @@ $(document).ready(function () {
         // $(".company-name").append(userPosts[k].Company.name);
         // $(".memberposts-title").append(userPosts[k].title);
         // $(".member-posts").append(userPosts[k].body);
-       
+        userCompanyCardObject.forEach(res => {
+          let card = document.createElement("div");
+          // card.setAttribute(title, "Test");
+          card.setAttribute(width, "100%");
+          card.setAttribute(height, "290");
+          let name = document.createTextNode('Company Name:' + res.companyname + ', ');
+          card.appendChild(name);
+          let comment = document.createTextNode('Title:' + res.postTitle + ', ');
+          card.appendChild(comment);
+          let post = document.createTextNode('Post:' + res.postBody);
+          card.appendChild(post);
+          let container = document.querySelector("#cardBody");
+          container.appendChild(card);
+        });
       }
     })
   }
 
-  
-userCompanyCardObject.forEach(res => {
-    let card = document.createElement("div");
-    // card.setAttribute(title, "Test");
-    card.setAttribute(width, "100%");
-    card.setAttribute(height, "290");
-    let name = document.createTextNode('Company Name:' + res.companyname + ', ');
-    card.appendChild(name);
-    let comment = document.createTextNode('Title:' + res.postTitle + ', ');
-    card.appendChild(comment);
-    let post = document.createTextNode('Post:' + res.postBody);
-    card.appendChild(post);
-    let container = document.querySelector("#cardBody");
-    container.appendChild(card);
-  });
+
+
   // $("#invitePal").on("click", function(){
   //   // Create hash and displays to user then stores in Invtes model
   //     $.post("/api/invite",{
