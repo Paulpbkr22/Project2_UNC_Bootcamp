@@ -44,7 +44,7 @@
           <li><a class="navbar-brand" href="/logout"></li>
             Logout
           </a>
-          <a class="navbar-brand" href="/HTML/members.html">Home</a>
+          <a class="navbar-brand" href="https://floating-harbor-41249.herokuapp.com/members">Home</a>
           <a class="navbar-brand"href="https://floating-harbor-41249.herokuapp.com/aboutus.html">About</a> 
           <a href="https://floating-harbor-41249.herokuapp.com/HTML/contact.html">Contact</a>
           <input type="text" placeholder="Search.." id="lookingForCompany">
@@ -133,7 +133,7 @@
     <div class="row">
       <div class="col-12">
         <div class="posts">
-          <h2 class = "company-post">Posts you have made:</h2>
+          <h2 class = "company-post" id = "compPosts">Posts you have made</h2>
             <span class="company-name"></span>
 
         </div>
@@ -152,7 +152,6 @@
        
             <form class="form-inline">
                 <div class="form-group mx-sm-3 mb-2">
-
                     <input type="text" class="form-control" id="companyNameAdd" placeholder="Company Name">
                 </div>
                 <button type="submit" id="companySubmit" class="btn btn-danger mb-2" autocomplete="off">Submit</button>
