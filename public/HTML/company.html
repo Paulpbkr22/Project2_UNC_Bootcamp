@@ -22,7 +22,49 @@
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header">
+
+<!------ GROUP ALL BRANDED STUFF ------>
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+      data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    
+    <a class="navbar-brand" href = "https://floating-harbor-41249.herokuapp.com/landing.html">
+      <img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
+      <span style="display: inline-block;">SpeakEasy</span>
+    </a>
+  </div>
+
+
+  <!------ NAVBAR LINKS ------>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active">
+      <li><a window.location.href = "https://floating-harbor-41249.herokuapp.com/aboutus.html">About SpeakEasy</a></li>
+      <li><a window.location.href = "https://floating-harbor-41249.herokuapp.com/contact.html">Contact</a></li>
+
+      <a class="navbar-brand" href="/logout">
+        Logout
+    </a>
+    <a class="active" href="https://floating-harbor-41249.herokuapp.com/members">Home</a>
+    <input type="text" placeholder="Search.." id="lookingForCompanyPage">
+<button id="companypageSearchButton">Submit</button>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a window.location.href = "https://floating-harbor-41249.herokuapp.com/loginsignup.html"></i>Sign Up </a></li>
+      <li><a window.location.href = "https://floating-harbor-41249.herokuapp.com/loginsignup.html">Login </i></a></li>
+
+    </ul>
+  </div>
+</div>
+</nav>
+
+            <!--<div class="navbar-header">
                 <a class="navbar-brand" href="/logout">
                     Logout
                 </a>
@@ -31,7 +73,7 @@
           <button id="companypageSearchButton">Submit</button>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <div class="container">
         <div class="row">
             <div class="posts">
@@ -53,6 +95,7 @@
             <h2>Posts for </h2>
             <div class="company-name"></div>
         </div>
+        <div><span class="userNamePost"></span></div>
         <div class="row">
             <span class="company-post-title"></span>
         </div>

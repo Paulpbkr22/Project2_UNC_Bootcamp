@@ -1,13 +1,78 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
   overflow: scroll;
   background-color: black;
   height: 700px;
+}
+
+ html {
+    overflow-x: initial !important;
+    overflow-y: initial !important;
   
 }
+
+li {
+  cursor: pointer;
+  }
+
+.fullBack {
+  background-color: black;
+}
+
 .company-name{
   color:white;
+}
+/* Button Style */
+
+#invitePal {
+  margin-left: 40%;
+
+  border-color: purple;
+  border-width: .35em;
+  color: black;
+  box-shadow: 0 0 40px 40px orange inset, 0 0 0 0 orange;
+  transition: all 500ms ease-in-out;
+  
+}
+#invitePal:hover {
+  box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
+}
+
+
+#invitePal, #createCompany {
+  height: 73px;
+  width: 25%;
+  font-weight: bold;
+  font-size: larger;
+}
+
+#createCompany {
+  margin-left: 40%;
+
+  border-color: purple;
+  border-width: .35em;
+  color: black;
+  box-shadow: 0 0 40px 40px orange inset, 0 0 0 0 orange;
+  transition: all 500ms ease-in-out;
+}
+
+#createCompany:hover {
+  box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
+}
+
+#invitePal:hover {
+  box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
+}
+
+
+
+.navLinks {
+  margin-left: 10px;
+}
+
+.company-post {
+  text-align: center;
 }
 
 #contact {
@@ -29,6 +94,13 @@ body {
   margin-bottom: 25px;
 }
 
+#lookingForCompany {
+  margin-left: 60%;
+  width: 18%
+}
+#companySearchButton {
+  position: relative;
+}
 .contact-wrapper {
   margin: 0 auto;
   padding-top: 20px;
@@ -37,6 +109,10 @@ body {
 }
 
 /*------ LANDING PAGE/ABOUT US ------*/
+
+.navbar {
+  background-color: white;
+}
 
 .navbar-nav {
   color: black;
@@ -48,6 +124,8 @@ body {
   position: relative;
   right: 40px;
   bottom: 8px;
+  background-color: white;
+  cursor: pointer;
 }
 
 .navbar-header {
@@ -137,7 +215,7 @@ h3 {
 }
 
 /*------ NEW REG PAGE ------*/
-.container{
+.RegContainer{
   width: 80%;
   margin: auto;
   padding: 20px;
@@ -156,10 +234,11 @@ color: white;
 .login{
   float:left;
   background-color: #080000;
-  height: 100%;
+  height: 90%;
   border-radius: 10px 0 0 10px;
   text-align: center;
   padding-top: 100px;
+  
 }
 .login h1{
   margin-bottom: 40px;
@@ -195,7 +274,7 @@ input[type="email"] , input[type="password"]{
   background-color: #112fb6;
   color: #fff;
   font-size: 20px;
-  cursor: pointer;
+  cursor: pointer!important;
   transition: 0.3s all ease-in-out;
 }
 .login button:hover{
@@ -232,7 +311,7 @@ input[type="email"] , input[type="password"]{
 .register{
   float: right;
   background-image: linear-gradient(135deg,  #e49d05 5%, #363536 95%);
-  height: 100%;
+  height: 90%;
   color:#fff;
   border-radius:  0 10px 10px  0;
   text-align: center;
@@ -268,6 +347,10 @@ input[type="email"] , input[type="password"]{
 
 /* ------ REGISTRATION PAGE ------*/
 
+form.signup {
+  align-items: center!important;
+}
+
 .registration {
   margin: 0;
   padding-top: 20px;
@@ -301,17 +384,6 @@ input[type="email"] , input[type="password"]{
   background-color: rgb(165, 155, 12);
 }
 
-.facebook {
-  background-color: blue;
-}
-
-.twitter {
-  background-color: cornflowerblue;
-}
-
-.google {
-  background-color: red;
-}
 
 /* ------ LEFT SIDE OF CONTACT PAGE ------ */
 
@@ -352,9 +424,6 @@ input[type="email"] , input[type="password"]{
   letter-spacing: 2px;
 }
 
-/*.button:hover {
-  transform: rotate(360deg);
-}*/
 
 /* ------ RIGHT SIDE OF CONTACT ------ */
 
@@ -407,67 +476,6 @@ input[type="email"] , input[type="password"]{
   text-decoration: none;
 }
 
-
-/* ------ SOCIAL MEDIA ICONS ------ */
-
-.social-media-list {
-  position: relative;
-  font-size: 2.3rem;
-  text-align: center;
-  width: 100%;
-}
-
-.social-media-list li a {
-  color: #fff;
-}
-
-.social-media-list li {
-  position: relative; 
-  top: 0;
-  left: -20px;
-  display: inline-block;
-  height: 70px;
-  width: 70px;
-  margin: 10px auto;
-  line-height: 70px;
-  border-radius: 50%;
-  color: #fff;
-  background-color: rgb(27,27,27);
-  cursor: pointer; 
-  transition: all .2s ease-in-out;
-}
-
-.social-media-list li:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  border-radius: 50%;
-  opacity: 0;
-  box-shadow: 0 0 0 1px #fff;
-  transition: all .2s ease-in-out;
-}
-
-.social-media-list li:hover {
-  background-color: #fff; 
-}
-
-.social-media-list li:hover:after {
-  opacity: 1;  
-  transform: scale(1.12);
-  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
-}
-
-.social-media-list li:hover a {
-  color: #111;
-}
-
-hr {
-  border-color: rgba(255,255,255,.8); ;
-}
 
 /* ------ MEDIA QUERIES ------ */
 
