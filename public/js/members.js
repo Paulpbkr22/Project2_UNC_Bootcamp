@@ -37,6 +37,7 @@ $(document).ready(function() {
         }
       }
     });
+
     function displayUserPosts(idForPosts){
       "inside displayUserPosts function"
       console.log(idForPosts)
@@ -61,12 +62,16 @@ $(document).ready(function() {
         }
         ).then(function(results){
         //  Display results in a modal here.
-        console.log(results.hash);
-        $("#inviteCode").text("Whisper Code: " + results.hash);
+         console.log(results.hash);
+        $("#inviteCode").text(results.hash);
         })
-
-
+    });   
+    
+    // Clipboard function
+    $(function(){
+      new Clipboard(".copy-text");
     });
+
     $("#createCompany").on("click", function(){
       console.log("inside createCompany")
       // var postTitle = $("postTitle")

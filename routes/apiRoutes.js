@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var path = require("path");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -27,8 +28,14 @@ module.exports = function(app) {
       res.redirect(307, "/api/login");
     }).catch(function(err) {
       console.log(err);
-      res.json(err);
-      // res.status(422).json(err.errors[0].message);
+      // res.json(err);
+      console.log("Failed");
+      // $("#registrationModal").modal("toggle");
+      // res.send(err);
+      // res.sendFile(path.join(__dirname, "../public/HTML/registration.html"));
+      
+      // res.redirect("/");
+      res.status(422).json(err.errors[0].message);
     });
   });
 
