@@ -36,11 +36,11 @@ $(document).ready(function () {
 
       }
     }
-  });
-  function displayUserPosts(idForPosts) {
-    "inside displayUserPosts function"
-    console.log(idForPosts)
-    
+    });
+
+    function displayUserPosts(idForPosts){
+      "inside displayUserPosts function"
+      console.log(idForPosts)
     $.ajax({
       url: "/api/user/" + idForPosts.id,
       method: "GET",
@@ -73,30 +73,32 @@ $(document).ready(function () {
     })
   }
 
+    $("#invitePal").on("click", function(){
+      // Create hash and displays to user then stores in Invtes model
+        $.post("/api/invite",{
+          user: userName,
+          UserId: userId
+        }
+        ).then(function(results){
+        //  Display results in a modal here.
+         console.log(results.hash);
+        $("#inviteCode").text(results.hash);
+        })
+    });   
+    
+    // Clipboard function
+    $(function(){
+      new Clipboard(".copy-text");
+    });
 
-
-  // $("#invitePal").on("click", function(){
-  //   // Create hash and displays to user then stores in Invtes model
-  //     $.post("/api/invite",{
-  //       user: userName,
-  //       UserId: userId
-  //     }
-  //     ).then(function(results){
-  //     //  Display results in a modal here.
-  //     })
-
-
-  // });
-
-  $("#invitePal").on("click", function () {
-    // Create hash and displays to user then stores in Invtes model
-    console.log("inside invite");
-    var userObjects = {
-      user: userName,
-      UserId: userId
-    }
-    generateInvite(userObjects);
-
+    $("#createCompany").on("click", function(){
+      console.log("inside createCompany")
+      // var postTitle = $("postTitle")
+      // console.log(postTitle)
+      // var companyName = $("#postCompanyInput");
+      // var postTextInput = $("#postCompanyText");
+      $("#addCompanyModal").modal("show");
+      
 
 
   });
