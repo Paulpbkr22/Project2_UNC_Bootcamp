@@ -127,7 +127,7 @@ li {
   max-width: 800px;
 }
 
-#membWelcome, #compPosts, .member-name {
+#membWelcome, #compPosts {
   color: white;
   font-size: 4.5em;
   font-family: "Special Elite", cursive;
