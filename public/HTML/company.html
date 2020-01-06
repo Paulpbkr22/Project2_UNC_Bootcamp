@@ -63,15 +63,26 @@
 
     
     <div class="container">
+            <!--<div class="navbar-header">
+                <a class="navbar-brand" href="/logout">
+                    Logout
+                </a>
+                <a class="active" href="https://floating-harbor-41249.herokuapp.com/members">Home</a>
+                <input type="text" placeholder="Search.." id="lookingForCompanyPage">
+          <button id="companypageSearchButton">Submit</button>
+            </div>
+        </div>
+    </nav> -->
+    <div class="container" style = "background-color: black;">
         <div class="row">
             <div class="posts">
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Company</label>
+                        <label for="exampleInputEmail1" id = "compTitle">Title</label>
                         <input type="text" class="form-control" id="postTitle" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Post</label>
+                        <label for="exampleFormControlTextarea1" id = "post">Post</label>
                         <textarea class="form-control" id="postCompanyText" rows="3"></textarea>
                     </div>
                     <button type="submit" id="postingSubmit" class="btn btn-primary">Submit</button>
@@ -80,16 +91,21 @@
             </div>
         </div>
         <div class="row">
-            <h2>Posts for </h2>
-            <div class="company-name"></div>
-        </div>
-        <div><span class="userNamePost"></span></div>
-        <div class="row">
-            <span class="company-post-title"></span>
-        </div>
-        <div class="row">
-            <span class="company-post"></span>
-        </div>
+                <div class="col-12">
+                  <div class="posts">
+                    <h2 class = "company-post" id = "compPosts">Posts</h2>
+                      <span class="company-name"></span>
+          
+                  </div>
+                </div>
+              </div>
+          
+              <div class = "col-md-12" style= "background-color: white; height: 100%;">
+                <div class="card-body" id = "cardBody">
+                  
+                </div>
+              </div>
+            </div>
     </div>
 
 

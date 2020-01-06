@@ -8,6 +8,8 @@
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="../CSS/newstyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
 
 
   <link href="https://fonts.googleapis.com/css?family=Rye|Special+Elite&display=swap" rel="stylesheet">
@@ -42,6 +44,12 @@
           <li><a class="navbar-brand" href="/logout"></li>
             Logout
           </a>
+          <a class="navbar-brand" href="https://floating-harbor-41249.herokuapp.com/members">Home</a>
+          <a class="navbar-brand"href="https://floating-harbor-41249.herokuapp.com/aboutus.html">About</a> 
+          <a href="https://floating-harbor-41249.herokuapp.com/HTML/contact.html">Contact</a>
+          <input type="text" placeholder="Search.." id="lookingForCompany">
+          <button id="companySearchButton">Submit</button>
+      
         </ul>
       </div>
     </div>
@@ -52,11 +60,70 @@
   <div class="container" style = "background-color: black;">
         <h2 id = "membWelcome">Welcome<span class="member-name"></span></h2>
       <div class="row">
-        <div class="col-sm-6">
-          <button id="invitePal">Invite a pal!</button>
+        <div class="col-md-6 col-md-offset-3">
+          <!-- Button trigger for Invite Pal modal -->
+          <button id="invitePal" type="button" class="btn btn-primary" data-toggle="modal"
+            data-target="#inviteAPal">Invite a pal!</button>
         </div>
-        <div class = "col-sm-6">
-          <button id="createCompany">Add a company</button>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <!-- Button trigger for Add Company modal -->
+          <button id="createCompany" data-target="#addCompanyModal">Add a company</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Invite Pal Modal -->
+    <div class="modal fade" id="inviteAPal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Invite a pal to join our network.</h5>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Share the following <strong>Whisper</strong> code with a friend so they can join our network.</p>
+            <div id="inviteCode"></div>
+            <!-- <a class="copy-text" data-clipboard-target="#inviteCode" href="#">Copy code</a> -->
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info copy-text" data-clipboard-target="#inviteCode">Copy code</button>
+            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Company Modal -->
+      <div class="modal fade" id="addCompanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add a company to our network</h5>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form-inline">
+              <div class="form-group mx-sm-3 mb-2">
+    
+                <input type="text" class="form-control" id="companyNameAdd" placeholder="Company Name">
+              </div>
+              <button type="submit" id="companySubmit" class="btn btn-danger mb-2" autocomplete="off">Submit</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
   
@@ -66,27 +133,25 @@
     <div class="row">
       <div class="col-12">
         <div class="posts">
-          <h2 class = "company-post">Posts</h2>
+          <h2 class = "company-post" id = "compPosts">Posts you have made</h2>
             <span class="company-name"></span>
 
         </div>
       </div>
     </div>
 
-    <div class = "col-md-12">
+    <div class = "col-md-12" style= "background-color: white; height: 100%;">
       <div class="card-body" id = "cardBody">
         
       </div>
     </div>
   </div>
-  
-  <div id="addCompanyModal" class="modal fade" role="dialog">
+  <!-- <div id="addCompanyModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
        
             <form class="form-inline">
                 <div class="form-group mx-sm-3 mb-2">
-
                     <input type="text" class="form-control" id="companyNameAdd" placeholder="Company Name">
                 </div>
                 <button type="submit" id="companySubmit" class="btn btn-danger mb-2" autocomplete="off">Submit</button>
@@ -96,7 +161,9 @@
         
       </div>
     </div>
-  </div>
+  </div> -->
+
+
 
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>

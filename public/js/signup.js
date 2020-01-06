@@ -27,7 +27,9 @@ $(document).ready(function() {
       console.log(userData);
   
       if (!userData.email || !userData.password|| !userData.inviteCode) {
-        return;
+        console.log("Add modal here");
+        $("#registrationModal").modal("toggle");
+        return;        
       }
       // If we have an email and password, run the signUpUser function
       signUpUser(userData);
@@ -42,6 +44,10 @@ $(document).ready(function() {
     function signUpUser(user) {
       $.post("/api/signup", user).then(function(data) {
         window.location.replace(data);
+        // if (data.name === "SequelizeUniqueConstraintError") {
+        //   $("#registrationModal").modal("toggle");
+
+        // }
         // If there's an error, handle it by throwing up a boostrap alert
       }).catch(handleLoginErr);
     }
@@ -49,5 +55,6 @@ $(document).ready(function() {
     function handleLoginErr(err) {
       $("#alert .msg").text(err.responseJSON);
       $("#alert").fadeIn(500);
+      $("#emailDupModal").modal("toggle");
     }
   });

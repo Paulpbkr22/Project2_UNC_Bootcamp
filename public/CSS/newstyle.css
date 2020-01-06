@@ -9,7 +9,6 @@ html, body {
  html {
     overflow-x: initial !important;
     overflow-y: initial !important;
-  
 }
 
 li {
@@ -22,18 +21,17 @@ li {
 
 .company-name{
   color:white;
+  font-size: 5em;
 }
 /* Button Style */
 
 #invitePal {
   margin-left: 40%;
-
   border-color: purple;
   border-width: .35em;
   color: black;
   box-shadow: 0 0 40px 40px orange inset, 0 0 0 0 orange;
   transition: all 500ms ease-in-out;
-  
 }
 #invitePal:hover {
   box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
@@ -49,7 +47,6 @@ li {
 
 #createCompany {
   margin-left: 40%;
-
   border-color: purple;
   border-width: .35em;
   color: black;
@@ -65,6 +62,33 @@ li {
   box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
 }
 
+#compPosts, #membWelcome {
+  color: white;
+  font-family: "Special Elite", cursive;
+  font-size: 4.5em;
+}
+
+#compTitle, #post {
+  color: white;
+  font-family: "Special Elite", cursive;
+  font-size: 1.7em;
+}
+
+#postingSubmit {
+  border-color: orange;
+  border-width: .35em;
+  color: black;
+  box-shadow: 0 0 40px 40px purple inset, 0 0 0 0 purple;
+  transition: all 500ms ease-in-out;
+  height: 73px;
+  width: 12%;
+  font-weight: bold;
+  font-size: larger;
+}
+
+#postingSubmit:hover {
+  box-shadow: 0 0 10px 0 purple inset, 0 0 10px 4px purple;
+}
 
 .navLinks {
   margin-left: 10px;
@@ -96,11 +120,10 @@ li {
   text-align: center;
   margin: 0 auto;
   padding-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 75px;
   font: 300 60px 'Special Elite', cursive;
   letter-spacing: 6px;
   color: #fff;
-  margin-bottom: 25px;
 }
 
 #lookingForCompany {
@@ -118,6 +141,12 @@ li {
   max-width: 800px;
 }
 
+#membWelcome, #compPosts, .member-name {
+  color: white;
+  font-size: 4.5em;
+  font-family: "Special Elite", cursive;
+}
+
 /*------ LANDING PAGE/ABOUT US ------*/
 
 .navbar {
@@ -127,7 +156,6 @@ li {
 .navbar-nav {
   color: black;
   font-family: "Special Elite", cursive;
-  
 }
 
 .navbar-brand {
@@ -144,11 +172,11 @@ li {
 
 #landing-page	{
 	background: url(https://images.unsplash.com/photo-1570508760310-4dccc6f80b23?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80);
-    background-size: cover !important;
-    background-position: center !important;
-    font-family: "Rye", cursive !important;
-    color: white !important;
-    bottom: 20px;
+  background-size: cover !important;
+  background-position: center !important;
+  font-family: "Rye", cursive !important;
+  color: white !important;
+  bottom: 20px;
 }
 
 html	{
@@ -164,20 +192,17 @@ html	{
 	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
 	             0px 8px 13px rgba(0,0,0,0.1),
 	             0px 18px 23px rgba(0,0,0,0.1) !important;
-
 }
 
 h1	{
-
 	font-weight: 400 !important;
 	font-size: 5em !important;
 }
 
 hr {
-
-width: 400px !important;
-border-top: 1px solid #f8f8f8 !important;
-border-bottom: 1px solid rgba(0,0,0,0.2) !important;
+  width: 400px !important;
+  border-top: 1px solid #f8f8f8 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.2) !important;
 }
 
 h3 {
@@ -229,7 +254,7 @@ h3 {
   width: 80%;
   margin: auto;
   padding: 20px;
-height:100%;
+  height:100%;
 }
 
 .login ,.register{width: 50%}
@@ -264,7 +289,7 @@ transition: all 0.4s ease 0s;
   color: white;
 }
 #passwordLogin{
-color: white;
+  color: white;
 }
 .login{
   float:left;
@@ -273,7 +298,6 @@ color: white;
   border-radius: 10px 0 0 10px;
   text-align: center;
   padding-top: 100px;
-  
 }
 .login h1{
   margin-bottom: 40px;

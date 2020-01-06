@@ -1,7 +1,7 @@
 // var md5 = require("md5");
 
 $(document).ready(function () {
-
+  var userCompanyCardObject=[];
   var userEmail = "";
   var userId = "";
   var userName = "";
@@ -36,10 +36,11 @@ $(document).ready(function () {
 
       }
     }
-  });
-  function displayUserPosts(idForPosts) {
-    "inside displayUserPosts function"
-    console.log(idForPosts)
+    });
+
+    function displayUserPosts(idForPosts){
+      "inside displayUserPosts function"
+      console.log(idForPosts)
     $.ajax({
       url: "/api/user/" + idForPosts.id,
       method: "GET",
@@ -47,36 +48,57 @@ $(document).ready(function () {
       console.log("line 47" + (JSON.stringify(data)));
       var userPosts = data.Posts
       for (var k = 0; k < userPosts.length; k++) {
-        $(".company-name").append(userPosts[k].Company.name);
-        $(".memberposts-title").append(userPosts[k].title);
-        $(".member-posts").append(userPosts[k].body);
-       
+        userCompanyCard = {
+          companyname: userPosts[k].Company.name,
+          postTitle: userPosts[k].title,
+          postBody: userPosts[k].body,
+      };
+      userCompanyCardObject.push(userCompanyCard);
+        // $(".company-name").append(userPosts[k].Company.name);
+        // $(".memberposts-title").append(userPosts[k].title);
+        // $(".member-posts").append(userPosts[k].body);
       }
+        userCompanyCardObject.forEach(res => {
+          let card = document.createElement("div");
+          let name = document.createTextNode('Company Name:' + res.companyname + ', ');
+          card.appendChild(name);
+          let comment = document.createTextNode('Title:' + res.postTitle + ', ');
+          card.appendChild(comment);
+          let post = document.createTextNode('Post:' + res.postBody);
+          card.appendChild(post);
+          let container = document.querySelector("#cardBody");
+          container.appendChild(card);
+        });
+      
     })
   }
 
-  // $("#invitePal").on("click", function(){
-  //   // Create hash and displays to user then stores in Invtes model
-  //     $.post("/api/invite",{
-  //       user: userName,
-  //       UserId: userId
-  //     }
-  //     ).then(function(results){
-  //     //  Display results in a modal here.
-  //     })
+    $("#invitePal").on("click", function(){
+      // Create hash and displays to user then stores in Invtes model
+        $.post("/api/invite",{
+          user: userName,
+          UserId: userId
+        }
+        ).then(function(results){
+        //  Display results in a modal here.
+         console.log(results.hash);
+        $("#inviteCode").text(results.hash);
+        })
+    });   
+    
+    // Clipboard function
+    $(function(){
+      new Clipboard(".copy-text");
+    });
 
-
-  // });
-
-  $("#invitePal").on("click", function () {
-    // Create hash and displays to user then stores in Invtes model
-    console.log("inside invite");
-    var userObjects = {
-      user: userName,
-      UserId: userId
-    }
-    generateInvite(userObjects);
-
+    $("#createCompany").on("click", function(){
+      console.log("inside createCompany")
+      // var postTitle = $("postTitle")
+      // console.log(postTitle)
+      // var companyName = $("#postCompanyInput");
+      // var postTextInput = $("#postCompanyText");
+      $("#addCompanyModal").modal("show");
+      
 
 
   });
@@ -182,19 +204,19 @@ function createCompany(company) {
 
   // Create Card 
 
-  let data = [
-    {name: 'name0', description: 'description', date: 'XX/XX/XXXX'},
-    {name: 'name1', description: 'description', date: 'XX/XX/XXXX'},
-    {name: 'name2', description: 'description', date: 'XX/XX/XXXX'},
-]
-data.forEach(res => {
-    let card = document.createElement("div");
-    let name = document.createTextNode('Name:' + res.name + ', ');
-    card.appendChild(name);
-    let description = document.createTextNode('Description:' + res.description + ', ');
-    card.appendChild(description);
-    let date = document.createTextNode('date:' + res.date);
-    card.appendChild(date);
-    let container = document.querySelector("#container");
-    container.appendChild(card);
-});
+//   let data = [
+//     {name: 'name0', description: 'description', date: 'XX/XX/XXXX'},
+//     {name: 'name1', description: 'description', date: 'XX/XX/XXXX'},
+//     {name: 'name2', description: 'description', date: 'XX/XX/XXXX'},
+// ]
+// data.forEach(res => {
+//     let card = document.createElement("div");
+//     let name = document.createTextNode('Name:' + res.name + ', ');
+//     card.appendChild(name);
+//     let description = document.createTextNode('Description:' + res.description + ', ');
+//     card.appendChild(description);
+//     let date = document.createTextNode('date:' + res.date);
+//     card.appendChild(date);
+//     let container = document.querySelector("#container");
+//     container.appendChild(card);
+// });
