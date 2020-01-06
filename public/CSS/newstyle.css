@@ -4,9 +4,17 @@ html, body {
   overflow: scroll;
   background-color: black;
   height: 700px;
+}
+
+ html {
+    overflow-x: initial !important;
+    overflow-y: initial !important;
   
 }
 
+li {
+  cursor: pointer;
+  }
 
 .fullBack {
   background-color: black;
@@ -110,7 +118,6 @@ html, body {
   color: black;
   font-family: "Special Elite", cursive;
   
-  
 }
 
 .navbar-brand {
@@ -118,6 +125,7 @@ html, body {
   right: 40px;
   bottom: 8px;
   background-color: white;
+  cursor: pointer;
 }
 
 .navbar-header {
@@ -230,7 +238,7 @@ color: white;
   border-radius: 10px 0 0 10px;
   text-align: center;
   padding-top: 100px;
-  background-image: url(https://images.unsplash.com/photo-1552028650-e8207c3026f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80);
+  
 }
 .login h1{
   margin-bottom: 40px;
@@ -266,7 +274,7 @@ input[type="email"] , input[type="password"]{
   background-color: #112fb6;
   color: #fff;
   font-size: 20px;
-  cursor: pointer;
+  cursor: pointer!important;
   transition: 0.3s all ease-in-out;
 }
 .login button:hover{
@@ -338,6 +346,10 @@ input[type="email"] , input[type="password"]{
 
 
 /* ------ REGISTRATION PAGE ------*/
+
+form.signup {
+  align-items: center!important;
+}
 
 .registration {
   margin: 0;
@@ -464,67 +476,6 @@ input[type="email"] , input[type="password"]{
   text-decoration: none;
 }
 
-
-/* ------ SOCIAL MEDIA ICONS ------ 
-
-.social-media-list {
-  position: relative;
-  font-size: 2.3rem;
-  text-align: center;
-  width: 100%;
-}
-
-.social-media-list li a {
-  color: #fff;
-}
-
-.social-media-list li {
-  position: relative; 
-  top: 0;
-  left: -20px;
-  display: inline-block;
-  height: 70px;
-  width: 70px;
-  margin: 10px auto;
-  line-height: 70px;
-  border-radius: 50%;
-  color: #fff;
-  background-color: rgb(27,27,27);
-  cursor: pointer; 
-  transition: all .2s ease-in-out;
-}
-
-.social-media-list li:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  border-radius: 50%;
-  opacity: 0;
-  box-shadow: 0 0 0 1px #fff;
-  transition: all .2s ease-in-out;
-}
-
-.social-media-list li:hover {
-  background-color: #fff; 
-}
-
-.social-media-list li:hover:after {
-  opacity: 1;  
-  transform: scale(1.12);
-  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
-}
-
-.social-media-list li:hover a {
-  color: #111;
-}
-
-hr {
-  border-color: rgba(255,255,255,.8); ;
-}*/
 
 /* ------ MEDIA QUERIES ------ */
 
