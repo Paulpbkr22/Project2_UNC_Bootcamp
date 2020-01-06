@@ -71,9 +71,9 @@ onLoad()
         }
         companyCardObject.push(companyCard);
 
-        $(".company-post-title").append(posts[i].title);
-        $(".company-post").append(posts[i].body);
-        $(".userNamePost").append(posts[i].User.name);
+        // $(".company-post-title").append(posts[i].title);
+        // $(".company-post").append(posts[i].body);
+        // $(".userNamePost").append(posts[i].User.name);
       }
       companyCardObject.forEach(res => {
         let card = document.createElement("div");
