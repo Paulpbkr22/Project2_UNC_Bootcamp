@@ -49,6 +49,9 @@ $(document).ready(function() {
 
         // }
         // If there's an error, handle it by throwing up a boostrap alert
+        if(!data.length){
+          $("#emailDupModal").modal("toggle");
+        }
       }).catch(handleLoginErr);
     }
   
