@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "DewT%@!!9",
+    "password": "Rootpassword",
     "database": "speakeasy_db",
     "host": "localhost",
     "dialect": "mysql"

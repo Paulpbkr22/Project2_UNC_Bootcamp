@@ -36,7 +36,7 @@ onLoad()
   function getParams(params) {
 
     queryname = params.get("name"); // is the string "Jonathan"
-    console.log(name);
+    // console.log(name);
     getExistingCompany(queryname);
   }
 
@@ -56,7 +56,7 @@ onLoad()
       method: "GET",
     }).then(function (data) {
       console.log(JSON.stringify(data));
-      console.log(data[0].name);
+      // console.log(data[0].name);
       companyIdNow = data[0].id;
       console.log(companyIdNow);
       var company = data[0].name;
@@ -102,7 +102,8 @@ onLoad()
   // Get Company
 
   // Update company
-  $("#postingSubmit").on("click", function () {
+  $("#postingSubmit").on("click", function (e) {
+    e.preventDefault()
     console.log(userId);
     console.log(companyIdNow);
     var passedCompanyId = companyIdNow
@@ -145,7 +146,7 @@ onLoad()
     }).then(function (data) {
       console.log("line34" + data);
       // window.location.replace(data);
-      console.log(name);
+      // console.log(name);
       window.location.href = "/company?name=" + queryname;
     }).catch(function (err) {
       if (err) throw err;
