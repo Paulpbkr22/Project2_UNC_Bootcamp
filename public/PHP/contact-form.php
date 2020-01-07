@@ -1,8 +1,8 @@
 <?php
-if(isset($_POST['email'])) {
+if(isset($_POST['submitContact'])) {
      
     // CHANGE THE TWO LINES BELOW
-    $email_to = "MY EMAIL ADDRESS HERE";
+    $email_to = "speaksoftlycast@gmail.com";
      
     $email_subject = "Website Enquiry";
      
