@@ -37,7 +37,7 @@ module.exports = function (app) {
     }).then(function (results) {
       console.log(results);
       if (!results.length){
-        res.send("invalid code");
+        res.status(422).json(results);;
       }
       else if (!results[0].beenUsed) {
         db.User.create({
@@ -61,7 +61,7 @@ module.exports = function (app) {
           res.json(dbUser);
         });
       } else {
-        res.send("code used");
+        res.status(422).json(results);
       }
     })
 
