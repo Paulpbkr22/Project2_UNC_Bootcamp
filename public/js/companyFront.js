@@ -157,8 +157,8 @@ onLoad()
 $("#companypageSearchButton").on("click", function(){
   var companyPageSearch = $("#lookingForCompanyPage")
   var companyPageSearchValue = companyPageSearch.val().trim();
-  // window.location.href = "/company?name=" + companyPageSearchValue;
-  checkForExistingComopany(companyPageSearchValue);
+  window.location.href = "/company?name=" + companyPageSearchValue;
+  // checkForExistingComopany(companyPageSearchValue);
 })
 function checkForExistingComopany(isExistingCompany){
   console.log("inside check for each");
