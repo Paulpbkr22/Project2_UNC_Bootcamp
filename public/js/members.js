@@ -142,14 +142,29 @@ $("#companySearchButton").on("click", function () {
   }
 
   
-  window.location.href = "https://floating-harbor-41249.herokuapp.com/company?name=" + lookingForCompanyValue;
+  // window.location.href = "https://floating-harbor-41249.herokuapp.com/company?name=" + lookingForCompanyValue;
   
-
+checkForExistingComopany(lookingForCompanyValue);
 
 
 
 });
-
+function checkForExistingComopany(isExistingCompany){
+console.log("inside check for each");
+  $.ajax({
+    url: "/api/company/" + isExistingCompany,
+    method: "GET",
+  }).then(function (data) {
+    console.log(data)
+    if(!data.length){
+     
+      $("#noCompanyModal").modal("show");
+    }
+    else{
+      window.location.href = "/company?name=" + isExistingCompany;
+    }
+  });
+}
 
 function getCompanyName(newName) {
   var companyAdd = {
