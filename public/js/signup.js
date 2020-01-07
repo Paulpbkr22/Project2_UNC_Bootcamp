@@ -43,7 +43,8 @@ $(document).ready(function() {
     // Otherwise we log any errors
     function signUpUser(user) {
       $.post("/api/signup", user).then(function(data) {
-        window.location.replace(data);
+        console.log(data)
+        window.location.replace("/login");
         // if (data.name === "SequelizeUniqueConstraintError") {
         //   $("#registrationModal").modal("toggle");
 
