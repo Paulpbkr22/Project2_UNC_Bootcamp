@@ -9,59 +9,52 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Rye|Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../CSS/newstyle.css">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
-
-
 </head>
 
+<body style = "background-color: black;">  
 
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    
+    <div class="test"><a class="navbar-brand navbar-header mx-5" href="#"><img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
+      <span style="display: inline-block;">SpeakEasy</span></a></div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
-<body style = "background-color: black;">
-  
-
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <!------ GROUP ALL BRANDED STUFF ------>
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!--<a class="navbar-brand" href="#">SpeakEasy</a>-->
-        <a class="navbar-brand" href="#">
-          <img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
-          <span style="display: inline-block;">SpeakEasy</span>
-        </a>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a class="navbar-brand" href="/logout"></li>
-            Logout
-          </a>
-          <a class="navbar-brand" href="https://floating-harbor-41249.herokuapp.com/members">Home</a>
-          <a class="navbar-brand"href="https://floating-harbor-41249.herokuapp.com/aboutus.html">About</a> 
-          <a href="https://floating-harbor-41249.herokuapp.com/HTML/contact.html">Contact</a>
-          <input type="text" placeholder="Search.." id="lookingForCompany">
-          <button id="companySearchButton" data-target="#noCompanyModal">Submit</button>
-      
-        </ul>
+      <div class="centerSearch">
+      <div class="navbar-nav navbar-brand navbar-header">
+        <div class="otherFont">
+        <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->
+        <a class="nav-item nav-link" href="/HTML/aboutus.html">About SpeakEasy</a>
+        <a class="nav-item nav-link" href="/HTML/contact.html">Contact</a>
       </div>
     </div>
-  </nav>
-  
-  <div class="container" style = "background-color: black;">
-        <h2 id = "membWelcome">Welcome<span class="member-name"></span></h2>
-      <div class="row">
+    </div>
+    <div class="form-inline">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search.." id="lookingForCompany">
+      <button class="btn btn-outline-success my-2 my-sm-0 px-2" type="submit" id="companySearchButton" data-target="#noCompanyModal">Submit</button>
+
+    
+    <a class="navbar-brand navbar-right ml-5" href="/logout"><div class="otherFont">Logout</div></a>
+  </form>
+  </nav>   
+    <!-- </div> -->
+
+  <div class="container py-4" style = "background-color: black;">
+        <h2 id="membWelcome">Welcome <span class="member-name"></span></h2>
+      <div class="row py-4">
         <div class="col-md-6 col-md-offset-3">
           <!-- Button trigger for Invite Pal modal -->
           <button id="invitePal" type="button" class="btn btn-primary" data-toggle="modal"
             data-target="#inviteAPal">Invite a pal!</button>
         </div>
-      </div>
-      <div class="row">
+
         <div class="col-md-6 col-md-offset-3">
           <!-- Button trigger for Add Company modal -->
           <button id="createCompany" data-target="#addCompanyModal">Add a company</button>
@@ -129,7 +122,7 @@
      <div class="modal-dialog" role="document">
        <div class="modal-content">
          <div class="modal-header">
-           <h5 class="modal-title" id="exampleModalLabel">Opps!</h5>
+           <h5 class="modal-title" id="exampleModalLabel">Oops!</h5>
 
            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
              <span aria-hidden="true">&times;</span>
@@ -148,40 +141,24 @@
     <br><br><br><br>
 
     <div class="row">
-      <div class="col-12">
+      <div class="col-3"></div>
+      <div class="col-6">
         <div class="posts">
           <h2 class = "company-post" id = "compPosts">Posts you have made</h2>
             <span class="company-name"></span>
-
         </div>
       </div>
+      <div class="col-3"></div>
     <!-- </div> -->
 
-    <div class = "col-md-12" style= "background-color: white; height: 100%;">
+    <div class="col-3"></div>
+    <div class = "col-md-6" style= "background-color: white; height: 100%;">
       <div class="card-body" id = "cardBody">
         
       </div>
+      <div class="col-3"></div>
     </div>
   </div>
-  
-  <!-- <div id="addCompanyModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-       
-            <form class="form-inline">
-                <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="companyNameAdd" placeholder="Company Name">
-                </div>
-                <button type="submit" id="companySubmit" class="btn btn-danger mb-2" autocomplete="off">Submit</button>
-            </form>
-          
-        
-        
-      </div>
-    </div>
-  </div> -->
-
-
 
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
@@ -191,11 +168,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script> -->
-  <!-- bootstrap -->
 
   <script type="text/javascript" src="../js/members.js"></script>
 </body>

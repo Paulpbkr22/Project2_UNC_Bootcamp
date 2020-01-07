@@ -10,7 +10,10 @@ html, body {
     overflow-x: initial !important;
     overflow-y: initial !important;
 }
+footer {
+  color: white;
 
+}
 li {
   cursor: pointer;
   }
@@ -19,16 +22,26 @@ li {
   background-color: black;
 }
 
-
+.company-name{
+  color:white;
+}
+.company-post {
+  color: white;
+}
+#membWelcome {
+  color: white;
+}
 /* Button Style */
 
 #invitePal {
   margin-left: 40%;
+
   border-color: purple;
   border-width: .35em;
   color: black;
   box-shadow: 0 0 40px 40px orange inset, 0 0 0 0 orange;
   transition: all 500ms ease-in-out;
+  
 }
 #invitePal:hover {
   box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
@@ -44,6 +57,7 @@ li {
 
 #createCompany {
   margin-left: 40%;
+
   border-color: purple;
   border-width: .35em;
   color: black;
@@ -59,37 +73,9 @@ li {
   box-shadow: 0 0 10px 0 orange inset, 0 0 10px 4px orange;
 }
 
-#compPosts, #membWelcome {
-  color: white;
-  font-family: "Special Elite", cursive;
-  font-size: 4.5em;
-}
-
-#compTitle, #post {
-  color: white;
-  font-family: "Special Elite", cursive;
-  font-size: 1.7em;
-}
-
-#postingSubmit {
-  border-color: orange;
-  border-width: .35em;
-  color: black;
-  box-shadow: 0 0 40px 40px purple inset, 0 0 0 0 purple;
-  transition: all 500ms ease-in-out;
-  height: 73px;
-  width: 12%;
-  font-weight: bold;
-  font-size: larger;
-}
-
-#postingSubmit:hover {
-  box-shadow: 0 0 10px 0 purple inset, 0 0 10px 4px purple;
-}
-
-.navLinks {
+/* .navLinks {
   margin-left: 10px;
-}
+} */
 
 .company-post {
   text-align: center;
@@ -107,16 +93,17 @@ li {
   text-align: center;
   margin: 0 auto;
   padding-top: 50px;
-  margin-bottom: 75px;
+  margin-bottom: 50px;
   font: 300 60px 'Special Elite', cursive;
   letter-spacing: 6px;
   color: #fff;
+  margin-bottom: 25px;
 }
 
-#lookingForCompany {
+/* #lookingForCompany {
   margin-left: 60%;
   width: 18%
-}
+} */
 #companySearchButton {
   position: relative;
 }
@@ -125,12 +112,6 @@ li {
   padding-top: 20px;
   position: relative;
   max-width: 800px;
-}
-
-#membWelcome, #compPosts {
-  color: white;
-  font-size: 4.5em;
-  font-family: "Special Elite", cursive;
 }
 
 /*------ LANDING PAGE/ABOUT US ------*/
@@ -142,27 +123,45 @@ li {
 .navbar-nav {
   color: black;
   font-family: "Special Elite", cursive;
+  
 }
-
+.nav-link {
+  float: left;
+}
+.centerSearch {
+  width: 50%;
+}
 .navbar-brand {
   position: relative;
-  right: 40px;
-  bottom: 8px;
+  right: 1px;
+  bottom: 10px;
   background-color: white;
   cursor: pointer;
+  float: left;
+  width: auto;
+  color: grey;
+  font-family: "Special Elite", cursive;  
 }
-
 .navbar-header {
   font-family: "Rye", cursive;
+  width: 100%;
+  /* float: left; */
+  /* height: 20%; */
+  color: grey;
+  display: inline-block;
 }
-
+.otherFont {
+  font-family: "Special Elite", cursive;
+  font-size: .7em;
+  display: inline-block;
+}
 #landing-page	{
 	background: url(https://images.unsplash.com/photo-1570508760310-4dccc6f80b23?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80);
-  background-size: cover !important;
-  background-position: center !important;
-  font-family: "Rye", cursive !important;
-  color: white !important;
-  bottom: 20px;
+    background-size: cover !important;
+    background-position: center !important;
+    font-family: "Rye", cursive !important;
+    color: white !important;
+    bottom: 20px;
 }
 
 html	{
@@ -178,17 +177,20 @@ html	{
 	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
 	             0px 8px 13px rgba(0,0,0,0.1),
 	             0px 18px 23px rgba(0,0,0,0.1) !important;
+
 }
 
 h1	{
+
 	font-weight: 400 !important;
 	font-size: 5em !important;
 }
 
 hr {
-  width: 400px !important;
-  border-top: 1px solid #f8f8f8 !important;
-  border-bottom: 1px solid rgba(0,0,0,0.2) !important;
+
+width: 400px !important;
+border-top: 1px solid #f8f8f8 !important;
+border-bottom: 1px solid rgba(0,0,0,0.2) !important;
 }
 
 h3 {
@@ -240,7 +242,7 @@ h3 {
   width: 80%;
   margin: auto;
   padding: 20px;
-  height:100%;
+height:100%;
 }
 
 .login ,.register{width: 50%}
@@ -250,7 +252,7 @@ h3 {
   color: white;
 }
 #passwordLogin{
-  color: white;
+color: white;
 }
 .login{
   float:left;
@@ -259,6 +261,7 @@ h3 {
   border-radius: 10px 0 0 10px;
   text-align: center;
   padding-top: 100px;
+  
 }
 .login h1{
   margin-bottom: 40px;
@@ -367,8 +370,9 @@ input[type="email"] , input[type="password"]{
 
 /* ------ REGISTRATION PAGE ------*/
 
-form.signup {
+.signup {
   align-items: center!important;
+  margin: 0 auto;
 }
 
 .registration {
@@ -387,7 +391,7 @@ form.signup {
 }
 
 .signin {
-    margin-left: 62px;
+    margin-left: 10px;
     color: #fff;
 }
 
@@ -402,6 +406,7 @@ form.signup {
   
 .create {
   background-color: rgb(165, 155, 12);
+  margin: 0 auto;
 }
 
 

@@ -77,7 +77,7 @@ onLoad()
       }
       companyCardObject.forEach(res => {
         let card = document.createElement("div");
-        let name = document.createTextNode('Username:' + res.userName + ', ');
+        let name = document.createTextNode('Username: ' + res.userName + ', ');
         card.appendChild(name);
         let comment = document.createTextNode('Title:' + res.postTitle + ', ');
         card.appendChild(comment);
