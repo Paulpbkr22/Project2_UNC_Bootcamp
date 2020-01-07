@@ -21,7 +21,13 @@ li {
 .fullBack {
   background-color: black;
 }
-
+#post {
+  color: white;
+}
+#compTitle {
+  color: white;
+  margin-top: 20px;
+}
 .company-name{
   color:white;
 }
