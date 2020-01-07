@@ -3,66 +3,42 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>Company</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Rye|Special+Elite&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../CSS/newstyle.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-
-<!------ GROUP ALL BRANDED STUFF ------>
-<div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-      data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+    <a class="navbar-brand navbar-header" href="#"><img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
+      <span style="display: inline-block;">SpeakEasy</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    
-    <a class="navbar-brand" href = "https://floating-harbor-41249.herokuapp.com/landing.html">
-      <img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
-      <span style="display: inline-block;">SpeakEasy</span>
-    </a>
-  </div>
-
-
-  <!------ NAVBAR LINKS ------>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="active">
-      <li><a window.location.href = "https://floating-harbor-41249.herokuapp.com/aboutus.html">About SpeakEasy</a></li>
-      <li><a window.location.href = "https://floating-harbor-41249.herokuapp.com/contact.html">Contact</a></li>
-
-      <a class="navbar-brand" href="/logout">
-        Logout
-    </a>
-    <a class="active" href="https://floating-harbor-41249.herokuapp.com/members">Home</a>
-    <input type="text" placeholder="Search.." id="lookingForCompanyPage">
-<button id="companypageSearchButton">Submit</button>
-
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a window.location.href = "https://floating-harbor-41249.herokuapp.com/loginsignup.html"></i>Sign Up </a></li>
-      <li><a window.location.href = "https://floating-harbor-41249.herokuapp.com/loginsignup.html">Login </i></a></li>
-
-    </ul>
-  </div>
-</div>
-</nav>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">About</a>
+        <a class="nav-item nav-link" href="#">Contact</a>
+      </div>
+    </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
 
             <!--<div class="navbar-header">
                 <a class="navbar-brand" href="/logout">
@@ -110,11 +86,17 @@
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
     <!-- <script type="text/javascript" src="../js/members.js"></script> -->
     <script type="text/javascript" src="../js/companyFront.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

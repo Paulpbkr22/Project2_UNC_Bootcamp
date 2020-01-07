@@ -126,12 +126,9 @@ li {
   bottom: 8px;
   background-color: white;
   cursor: pointer;
-}
-
-.navbar-header {
+  vertical-align: center;
   font-family: "Rye", cursive;
 }
-
 #landing-page	{
 	background: url(https://images.unsplash.com/photo-1570508760310-4dccc6f80b23?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80);
     background-size: cover !important;

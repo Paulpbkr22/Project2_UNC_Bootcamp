@@ -4,27 +4,27 @@
 <head>  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Speakeasy</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Rye|Special+Elite&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="../CSS/newstyle.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
   <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
-
-
 </head>
 
+<body style = "background-color: black;">  
 
-
-<body style = "background-color: black;">
-  
-
-  <nav class="navbar navbar-default">
+  <!-- <nav class="navbar navbar-light bg-light">
     <div class="container">
-      <!------ GROUP ALL BRANDED STUFF ------>
-      <div class="navbar-header">
+      
+      <div>
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
           data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -32,7 +32,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <!--<a class="navbar-brand" href="#">SpeakEasy</a>-->
+        
         <a class="navbar-brand" href="#">
           <img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
           <span style="display: inline-block;">SpeakEasy</span>
@@ -41,8 +41,8 @@
           <li><a class="navbar-brand" href="/logout"></li>
             Logout
           </a>
-          <a class="navbar-brand" href="/HTML/members.html">Home</a>
-          <a class="navbar-brand"href="https://floating-harbor-41249.herokuapp.com/aboutus.html">About</a> 
+          <a class="nav-item nav-link active" href="/HTML/members.html">Home</a>
+          <a class="navbar-brand" href="https://floating-harbor-41249.herokuapp.com/aboutus.html">About</a> 
           <a href="https://floating-harbor-41249.herokuapp.com/HTML/contact.html">Contact</a>
           <input type="text" placeholder="Search.." id="lookingForCompany">
           <button id="companySearchButton">Submit</button>
@@ -50,8 +50,27 @@
         </ul>
       </div>
     </div>
+  </nav> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+    <div class="test"><a class="navbar-brand navbar-header" href="#"><img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
+      <span style="display: inline-block;">SpeakEasy</span></a></div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">About</a>
+        <a class="nav-item nav-link" href="#">Contact</a>
+      </div>
+    </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
   </nav>
-
 
   
   <div class="container" style = "background-color: black;">
@@ -62,8 +81,7 @@
           <button id="invitePal" type="button" class="btn btn-primary" data-toggle="modal"
             data-target="#inviteAPal">Invite a pal!</button>
         </div>
-      </div>
-      <div class="row">
+
         <div class="col-md-6 col-md-offset-3">
           <!-- Button trigger for Add Company modal -->
           <button id="createCompany" data-target="#addCompanyModal">Add a company</button>
