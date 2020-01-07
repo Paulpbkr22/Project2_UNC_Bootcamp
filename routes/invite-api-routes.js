@@ -1,11 +1,12 @@
 var db = require("../models");
-
+var shortid = require("shortid");
 
 module.exports = function(app) {
 
   app.post("/api/invite", function(req, res) {
-    
-    db.Invite.create(req.body).then(function(dbInvite){
+    let invite = req.body;
+    invite.hash= shortid.generate();
+    db.Invite.create(invite).then(function(dbInvite){
         // console.log(dbInvite.hash);
         res.json(dbInvite);
       }).catch(function(err){

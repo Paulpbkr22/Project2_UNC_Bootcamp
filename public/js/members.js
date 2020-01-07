@@ -142,7 +142,7 @@ $("#companySearchButton").on("click", function () {
   }
 
   
-  // window.location.href = "https://floating-harbor-41249.herokuapp.com/company?name=" + lookingForCompanyValue;
+  // window.location.href = "/company?name=" + lookingForCompanyValue;
   
 checkForExistingComopany(lookingForCompanyValue);
 

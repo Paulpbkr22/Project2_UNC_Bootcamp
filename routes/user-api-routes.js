@@ -30,13 +30,16 @@ module.exports = function (app) {
   });
 
   // Route for creating a new user
-  app.post("/api/user", function (req, res) {
+  app.post("/api/signup", function (req, res) {
     db.Invite.findAll({
       where:{
         hash: req.body.inviteCode}
     }).then(function (results) {
       console.log(results);
-      if (!results[0].beenUsed) {
+      if (!results.length){
+        res.status(422).json(results);;
+      }
+      else if (!results[0].beenUsed) {
         db.User.create({
           email: req.body.email,
           password: req.body.password,
@@ -58,7 +61,7 @@ module.exports = function (app) {
           res.json(dbUser);
         });
       } else {
-        res.send("failure");
+        res.status(422).json(results);
       }
     })
 

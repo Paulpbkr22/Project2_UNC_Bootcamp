@@ -1,5 +1,5 @@
 // var md5 = require("md5");
-var shortid = require("shortid");
+// var shortid = require("shortid");
 
 
 module.exports = function(sequelize, DataTypes){
@@ -11,7 +11,6 @@ module.exports = function(sequelize, DataTypes){
         hash:{
             type: DataTypes.STRING,
             primaryKey: true,
-            defaultValue: shortid.generate(),
             unique: true
         },
         user: DataTypes.STRING,
