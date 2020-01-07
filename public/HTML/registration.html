@@ -10,9 +10,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="../CSS/newstyle.css">
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Rye|Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../CSS/newstyle.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
 
   <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -25,12 +28,12 @@
     crossorigin="anonymous"></script> -->
 </head>
 <body>
-<nav class="navbar navbar-default">
-<div class="container" align="center">
+<!-- <nav class="navbar navbar-default">
+<div class="container" align="center"> -->
 
 
   <!------ GROUP ALL BRANDED STUFF ------>
-  <div class="navbar-header">
+  <!-- <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
       data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
       <span class="sr-only">Toggle navigation</span>
@@ -45,10 +48,10 @@
       <span style="display: inline-block;">SpeakEasy</span>
     </a>
   </div>
-
+ -->
 
   <!------ NAVBAR LINKS ------>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li class="active">
       <li><a window.location.href = "https://floating-harbor-41249.herokuapp.com/about.html">About SpeakEasy</a></li>
@@ -61,57 +64,89 @@
       <li><a window.location.href = "https://floating-harbor-41249.herokuapp.com/loginsignup.html">Login </i></a></li>
 
     </ul>
+  </div> -->
+<!-- </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    
+  <div class="test"><a class="navbar-brand navbar-header mx-5" href="#"><img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
+    <span style="display: inline-block;">SpeakEasy</span></a></div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+    <div class="centerSearch">
+    <div class="navbar-nav navbar-brand navbar-header">
+      <div class="otherFont">
+      <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->
+      <a class="nav-item nav-link" href="/HTML/aboutus.html">About SpeakEasy</a>
+      <a class="nav-item nav-link" href="/HTML/contact.html">Contact</a>
+      <a class="navbar-right nav-link" href="/HTML/loginsignup.html">Login</a>
+    </div>
+  </div>
+  </div>
+
+
+</nav>  
+
+<h1 class="section-header">CREATE AN ACCOUNT</h1>
+<div class="row">
+  <div class="col">
+    
+  </div>
+  <div class="col-4">
+    <section id="contact" valign="center">      
+  
+      <div class="content contact-wrapper"></div>
+  
+      <form class="signup" class="form-horizontal" role="form" method="post" action="/api/user">
+  
+        <div class="form-group">
+          <div class="col-sm-14">
+            <input type="text" class="form-control" id="email" placeholder="EMAIL">
+          </div>
+        </div>
+        <div class="form-group" >
+          <div class="col-sm-14">
+            <input type="text" class="form-control" id="jobTitle" placeholder="JOB TITLE" >
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-14">
+            <input type="text" class="form-control" id="nameInput" placeholder="USERNAME" >
+          </div>
+        </div>
+  
+        <div class="form-group" >
+          <div class="col-sm-14">
+            <input type="password" class="form-control" id="password" placeholder="PASSWORD" >
+          </div>
+        </div>
+        <div class="form-group" >
+          <div class="col-sm-14">
+            <br>
+            <br>
+            <input type="text" class="form-control" id="invitationcode" placeholder="Invitation code" >
+          </div>
+        </div>
+  
+        <br>
+        <input type="checkbox"/><span class='signin'>I have read and agree to the <a href="#">Terms of Use </a>and <a
+            href="#">Privacy Policy</a></span>
+  
+        <br>
+        <br>
+        <button class="create">Create Account</button>
+        
+      </section>
+  
+  </div>
+  <div class="col">
+    
   </div>
 </div>
-</nav>
-
-  <section id="contact" align="center">
-
-    <h1 class="section-header">CREATE AN ACCOUNT</h1>
-
-    <div class="content contact-wrapper"></div>
-
-    <form class="signup" class="form-horizontal" role="form" method="post" action="/api/user">
-
-      <div class="form-group">
-        <div class="col-sm-14">
-          <input type="text" class="form-control" id="email" placeholder="EMAIL">
-        </div>
-      </div>
-      <div class="form-group" >
-        <div class="col-sm-14">
-          <input type="text" class="form-control" id="jobTitle" placeholder="JOB TITLE" >
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-14">
-          <input type="text" class="form-control" id="nameInput" placeholder="USERNAME" >
-        </div>
-      </div>
-
-      <div class="form-group" >
-        <div class="col-sm-14">
-          <input type="password" class="form-control" id="password" placeholder="PASSWORD" >
-        </div>
-      </div>
-      <div class="form-group" >
-        <div class="col-sm-14">
-          <br>
-          <br>
-          <input type="text" class="form-control" id="invitationcode" placeholder="Invitation code" >
-        </div>
-      </div>
-
-      <br>
-      <input type="checkbox"/><span class='signin'>I have read and agree to the <a href="#">Terms of Use </a>and <a
-          href="#">Privacy Policy</a></span>
-
-      <br>
-      <br>
-      <button class="create">Create Account</button>
-      
-
-
 
 <!-- Registration Errors Modal -->
 <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -163,7 +198,7 @@
 </div>
 
 
-      <div class="direct-contact-container signin-right">
+      <!-- <div class="direct-contact-container signin-right">
         <ul class="contact-list">
           <li class="list-item"?><span class="contact-text-place">Already have an acount? <a window.location.href = "https://floating-harbor-41249.herokuapp.com/loginsignup.html">Sign In</a></span></li>
         </ul>
@@ -171,6 +206,9 @@
       </div>-->
 
   </section>
+
+  
+  <footer align="center" class="copyright">&copy; Copyright 2020 SpeakEasy </footer>
 </div>
 <script
 src="https://code.jquery.com/jquery-3.4.1.js"
@@ -184,12 +222,11 @@ crossorigin="anonymous"></script>
 
 </body>
 
-<!-- <br>
+<br>
   <br>
   <br>
   <br>
   <br>
   <br>
-  <footer align="center">&copy; Copyright 2020 SpeakEasy </footer> -->
 
 </html>
