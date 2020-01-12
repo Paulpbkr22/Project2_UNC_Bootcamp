@@ -2,123 +2,136 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Company</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../CSS/newstyle.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Speakeasy</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Rye|Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/newstyle.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
 
-  
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-
-<!------ GROUP ALL BRANDED STUFF ------>
-<div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-      data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+    <div class="test"><a class="navbar-brand navbar-header mx-5" href="#"><img src="../Images/monocle.png" height="40"
+          width="40" style="display: inline-block;">
+        <span style="display: inline-block;">SpeakEasy</span></a></div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    
-    <a class="navbar-brand navbar-header" href="/HTML/landing.html">
-      <img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
-      <span style="display: inline-block;">SpeakEasy</span>
-    </a>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
+      <div class="centerSearch">
+        <div class="navbar-nav navbar-brand navbar-header">
+          <div class="otherFont">
 
-  <!------ NAVBAR LINKS ------>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-brand navbar-header">
-      <li class="active">
-      <li><a class="nav-item nav-link" href="/HTML/aboutus.html">About SpeakEasy</a></li>
-      <li><a href="/HTML/contact.html">Contact</a></li>
-      <li><a href="/HTML/members.html">Home</a></li>
-
-      <a class="navbar-brand" href="/logout">
-        Logout
-    </a>
-    <!-- <a class="active" href="/HTML/members">Home</a> -->
-    <input type="text" placeholder="Search.." id="lookingForCompanyPage">
-<button id="companypageSearchButton">Submit</button>
-
-    </ul>
-    <!-- <ul class="nav navbar-nav navbar-right">
-      <li><a href="loginsignup.html"></i>Sign Up </a></li>
-      <li><a window.location.href = "HTML/loginsignup.html">Login </i></a></li>
-
-    </ul> -->
-  </div>
-</div>
-</nav>
-
-            <!--<div class="navbar-header">
-                <a class="navbar-brand" href="/logout">
-                    Logout
-                </a>
-                <a class="active" href="https://floating-harbor-41249.herokuapp.com/members">Home</a>
-                <input type="text" placeholder="Search.." id="lookingForCompanyPage">
-          <button id="companypageSearchButton">Submit</button>
-            </div>
+            <a class="nav-item nav-link" href="/HTML/aboutus.html">About SpeakEasy</a>
+            <a class="nav-item nav-link" href="/HTML/contact.html">Contact</a>
+            <a class="nav-item nav-link" href="/HTML/members.html">Home</a>
+          </div>
         </div>
-    </nav> -->
-    <div class="container" style = "background-color: black;">
-        <div class="row">
-            <div class="posts">
-                <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1" id="compTitle">Title</label>
-                        <input type="text" class="form-control" id="postTitle" aria-describedby="emailHelp">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1" id="post">Post</label>
-                        <textarea class="form-control" id="postCompanyText" rows="3"></textarea>
-                    </div>
-                    <button type="submit" id="postingSubmit" class="btn btn-primary">Submit</button>
-                </form>
+      </div>
+      <div class="form-inline">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search.." id="lookingForCompanyPage">
+        <button class="btn btn-outline-success my-2 my-sm-0 px-2" type="submit" id="companypageSearchButton"
+          data-target="#noCompanyModal">Submit</button>
 
-            </div>
+
+        <a class="navbar-brand navbar-right ml-5" href="/logout">
+          <div class="otherFont">Logout</div>
+        </a>
+        </form>
+  </nav>
+
+
+  <div class="container" style="background-color: black;">
+    <h3 class="posting">Make a post about this company!</h3>
+    <div class="row">
+      <div class="posts">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1" id="compTitle">Title</label>
+            <input type="text" class="form-control" id="postTitle" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1" id="post">Post</label>
+            <textarea class="form-control" id="postCompanyText" rows="3"></textarea>
+          </div>
+          <button type="submit" id="postingSubmit" class="btn btn-primary">Submit</button>
+        </form>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="posts">
+          <h2 class="company-post" id="compPosts">Posts for "<span class="company-name"></span>"</h2>
+          
+
         </div>
-        <div class="row">
-                <div class="col-12">
-                  <div class="posts">
-                    <h2 class="company-post" id="compPosts">Posts</h2>
-                      <span class="company-name"></span>
-          
-                  </div>
-                </div>
-              </div>
-          
-              <div class="col-md-12" style="background-color: white; height: 100%;">
-                <div class="card-body" id="cardBody">
-                  
-                </div>
-              </div>
-              
-            </div>
+        <div class="col">
+        <div class="card">
+          <div class="card-body">
+          </div>
+          </div>
+        </div> 
+      </div>
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script type="text/javascript" src="../js/members.js"></script> -->
-    <script type="text/javascript" src="../js/companyFront.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    
+    <!-- <div class="card" style="width: 18rem;">
+      <div class="card-body"> -->
+        <!-- <h5 class="card-title">Card title</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a> -->
+      <!-- </div> -->
+    <!-- </div> -->
+    <div class="modal fade" id="noCompanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Oops!</h5>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>This company is currently not in our database. Please add it to include it with a post.</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+      <script type="text/javascript" src="../js/companyFront.js"></script>
+
 </body>
 
 </html>
