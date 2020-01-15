@@ -56,12 +56,11 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (data) {
       console.log(JSON.stringify(data));
-      // console.log(data[0].name);
+      
       companyIdNow = data[0].id;
       console.log(companyIdNow);
       var company = data[0].name;
       var posts = data[0].Posts;
-      // console.log(data[0].Posts[0].body);
       $(".company-name").text(company);
       for (var i = 0; i < posts.length; i++) {
         companyCard = {
@@ -71,33 +70,23 @@ $(document).ready(function () {
         }
         companyCardObject.push(companyCard);
 
-        // $(".company-post-title").append(posts[i].title);
-        // $(".company-post").append(posts[i].body);
-        // $(".userNamePost").append(posts[i].User.name);
+       
       }
-      companyCardObject.forEach(res => {
-        // let card = document.createElement("div");
-        // let name = document.createTextNode('Username: ' + res.userName + ', ');
-        // card.appendChild(name);
-        // let comment = document.createTextNode('Title:' + res.postTitle + ', ');
-        // card.appendChild(comment);
-        // let post = document.createTextNode('Post:' + res.postBody);
-        // card.appendChild(post);
-        // let container = document.querySelector(".card-body");
-        // container.appendChild(card);
-        // data.forEach(function(animal){
-          var card = $("<div>").append(
-            $("<p>").text("Posts by: "+res.userName),
-            $("<p>").text("Titled: "+res.postTitle),
-            $("<p>").text("Post: "+res.postBody)
-            // $("<td>").text(animal.weight)
+      
+        for(var i=0; i<companyCardObject.length; i++){
+        
+          var card = $("<div>").addClass("card p-3 m-3").attr("style", "width: 18rem;").append(
+            $("<div>").addClass("card-title").text("Posts by: "+companyCardObject[i].userName),
+            $("<div>").addClass("card-subtitle").text("Titled: "+companyCardObject[i].postTitle),
+            $("<div>").addClass("card-text pt-3").text("Post: "+companyCardObject[i].postBody)
+           
           );
         
-        $(".card-body").append(card);
+        $(".cardRow").append(card);
         
 
-        
-      });
+        }
+      // });
 
 
 

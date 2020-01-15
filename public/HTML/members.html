@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>  
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,154 +11,159 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Rye|Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../CSS/newstyle.css">
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
 </head>
 
-<body style = "background-color: black;">  
+<body style="background-color: black;">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    
-    <div class="test"><a class="navbar-brand navbar-header mx-5" href="#"><img src="../Images/monocle.png" height="40" width="40" style="display: inline-block;">
-      <span style="display: inline-block;">SpeakEasy</span></a></div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+    <div class="test"><a class="navbar-brand navbar-header mx-5" href="#"><img src="../Images/monocle.png" height="40"
+          width="40" style="display: inline-block;">
+        <span style="display: inline-block;">SpeakEasy</span></a></div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
       <div class="centerSearch">
-      <div class="navbar-nav navbar-brand navbar-header">
-        <div class="otherFont">
-        <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->
-        <a class="nav-item nav-link" href="/HTML/aboutus.html">About SpeakEasy</a>
-        <a class="nav-item nav-link" href="/HTML/contact.html">Contact</a>
-      </div>
-    </div>
-    </div>
-    <div class="form-inline">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search.." id="lookingForCompany">
-      <button class="btn btn-outline-success my-2 my-sm-0 px-2" type="submit" id="companySearchButton" data-target="#noCompanyModal">Submit</button>
-
-    
-    <a class="navbar-brand navbar-right ml-5" href="/logout"><div class="otherFont">Logout</div></a>
-  </form>
-  </nav>   
-    <!-- </div> -->
-
-  <div class="container py-4" style = "background-color: black;">
-        <h2 id="membWelcome">Welcome <span class="member-name"></span></h2>
-      <div class="row py-4">
-        <div class="col-md-6 col-md-offset-3">
-          <!-- Button trigger for Invite Pal modal -->
-          <button id="invitePal" type="button" class="btn btn-primary" data-toggle="modal"
-            data-target="#inviteAPal">Invite a pal!</button>
-        </div>
-
-        <div class="col-md-6 col-md-offset-3">
-          <!-- Button trigger for Add Company modal -->
-          <button id="createCompany" data-target="#addCompanyModal">Add a company</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Invite Pal Modal -->
-    <div class="modal fade" id="inviteAPal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Invite a pal to join our network.</h5>
-
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Share the following <strong>Whisper</strong> code with a friend so they can join our network.</p>
-            <div id="inviteCode"></div>
-            <!-- <a class="copy-text" data-clipboard-target="#inviteCode" href="#">Copy code</a> -->
-            
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-info copy-text" data-clipboard-target="#inviteCode">Copy code</button>
-            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        <div class="navbar-nav navbar-brand navbar-header">
+          <div class="otherFont">
+            <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->
+            <a class="nav-item nav-link" href="/HTML/aboutus.html">About SpeakEasy</a>
+            <a class="nav-item nav-link" href="/HTML/contact.html">Contact</a>
           </div>
         </div>
       </div>
-    </div>
+      <div class="form-inline">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search.." id="lookingForCompany">
+        <button class="btn btn-outline-success my-2 my-sm-0 px-2" type="submit" id="companySearchButton"
+          data-target="#noCompanyModal">Submit</button>
 
-    <!-- Add Company Modal -->
-      <div class="modal fade" id="addCompanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add a company to our network</h5>
 
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form class="form-inline">
-              <div class="form-group mx-sm-3 mb-2">
-    
-                <input type="text" class="form-control" id="companyNameAdd" placeholder="Company Name">
-              </div>
-              <button type="submit" id="companySubmit" class="btn btn-danger mb-2" autocomplete="off">Submit</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-          </div>
-        </div>
+        <a class="navbar-brand navbar-right ml-5" href="/logout">
+          <div class="otherFont">Logout</div>
+        </a>
+        </form>
+  </nav>
+  <!-- </div> -->
+
+  <div class="container py-4" style="background-color: black;">
+    <h2 id="membWelcome">Welcome <span class="member-name"></span></h2>
+    <div class="row py-4">
+      <div class="col-md-6 col-md-offset-3">
+        <!-- Button trigger for Invite Pal modal -->
+        <button id="invitePal" type="button" class="btn btn-primary" data-toggle="modal"
+          data-target="#inviteAPal">Invite a pal!</button>
       </div>
-  
+
+      <div class="col-md-6 col-md-offset-3">
+        <!-- Button trigger for Add Company modal -->
+        <button id="createCompany" data-target="#addCompanyModal">Add a company</button>
+      </div>
     </div>
-     <!-- No Company Modal -->
-     <div class="modal fade" id="noCompanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h5 class="modal-title" id="exampleModalLabel">Oops!</h5>
-
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-           </button>
-         </div>
-         <div class="modal-body">
-            <h5>This company is currently not in our database. Please add it to include it with a post.</h5>
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-         </div>
-       </div>
-     </div>
- 
-   </div>
-    <br><br><br><br>
-
     <div class="row">
       <div class="col-3"></div>
       <div class="col-6">
         <div class="posts">
-          <h2 class = "company-post" id = "compPosts">Posts you have made</h2>
-            <span class="company-name"></span>
+          <h2 class="company-post" id="compPosts">Posts you have made</h2>
+          <span class="company-name"></span>
         </div>
       </div>
       <div class="col-3"></div>
-    <!-- </div> -->
 
-    <div class="col-3"></div>
-    <div class = "col-md-6" style= "background-color: white; height: 100%;">
-      <div class="card-body" id = "cardBody">
-        
+
+      
+      
+      <div class="row cardRow">
+
+       
       </div>
-      <div class="col-3"></div>
     </div>
   </div>
+
+  <!-- Invite Pal Modal -->
+  <div class="modal fade" id="inviteAPal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Invite a pal to join our network.</h5>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Share the following <strong>Whisper</strong> code with a friend so they can join our network.</p>
+          <div id="inviteCode"></div>
+          <!-- <a class="copy-text" data-clipboard-target="#inviteCode" href="#">Copy code</a> -->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info copy-text" data-clipboard-target="#inviteCode">Copy code</button>
+          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Company Modal -->
+  <div class="modal fade" id="addCompanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add a company to our network</h5>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+
+              <input type="text" class="form-control" id="companyNameAdd" placeholder="Company Name">
+            </div>
+            <button type="submit" id="companySubmit" class="btn btn-danger mb-2" autocomplete="off">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- No Company Modal -->
+  <div class="modal fade" id="noCompanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Oops!</h5>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h5>This company is currently not in our database. Please add it to include it with a post.</h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br><br><br><br>
+  <!-- <div class="container"> -->
+
 
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>

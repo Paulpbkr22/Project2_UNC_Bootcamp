@@ -53,20 +53,23 @@ $(document).ready(function () {
           postTitle: userPosts[k].title,
           postBody: userPosts[k].body,
       };
+      console.log(userCompanyCard);
       userCompanyCardObject.push(userCompanyCard);
         
       }
-        userCompanyCardObject.forEach(res => {
-          let card = document.createElement("div");
-          let name = document.createTextNode('Company Name:' + res.companyname + ', ');
-          card.appendChild(name);
-          let comment = document.createTextNode('Title:' + res.postTitle + ', ');
-          card.appendChild(comment);
-          let post = document.createTextNode('Post:' + res.postBody);
-          card.appendChild(post);
-          let container = document.querySelector("#cardBody");
-          container.appendChild(card);
-        });
+       
+        console.log(userCompanyCardObject);
+        for(var i=0; i<userCompanyCardObject.length; i++){
+        var cards = $("<div>").addClass("card p-3 m-3").attr("style", "width: 18rem;").append(
+          $("<div>").addClass("card-title").text("Posts for: "+userCompanyCardObject[i].companyname),
+          $("<div>").addClass("card-subtitle").text("Titled: "+userCompanyCardObject[i].postTitle),
+          $("<div>").addClass("card-text pt-3").text("Post: "+userCompanyCardObject[i].postBody)
+          
+        );
+
+      $(".cardRow").append(cards);
+        }
+      
       
     })
   }
