@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var companyCardObject =[];
+  var companyCardObject = [];
   var companyIdNow;
   var userEmail = "";
   var userId = "";
@@ -23,16 +23,16 @@ $(document).ready(function () {
     }
   });
 
-onLoad()
-  function onLoad(){
-  let params = new URLSearchParams(document.location.search.substring(1));
-  console.log(params);
-  getParams(params)
-}
+  onLoad()
+  function onLoad() {
+    let params = new URLSearchParams(document.location.search.substring(1));
+    console.log(params);
+    getParams(params)
+  }
 
 
 
-  
+
   function getParams(params) {
 
     queryname = params.get("name"); // is the string "Jonathan"
@@ -56,43 +56,44 @@ onLoad()
       method: "GET",
     }).then(function (data) {
       console.log(JSON.stringify(data));
-      // console.log(data[0].name);
+      
       companyIdNow = data[0].id;
       console.log(companyIdNow);
       var company = data[0].name;
       var posts = data[0].Posts;
-      // console.log(data[0].Posts[0].body);
       $(".company-name").text(company);
       for (var i = 0; i < posts.length; i++) {
-        companyCard ={
-          userName : posts[i].User.name,
+        companyCard = {
+          userName: posts[i].User.name,
           postTitle: posts[i].title,
           postBody: posts[i].body
         }
         companyCardObject.push(companyCard);
 
-        // $(".company-post-title").append(posts[i].title);
-        // $(".company-post").append(posts[i].body);
-        // $(".userNamePost").append(posts[i].User.name);
+       
       }
-      companyCardObject.forEach(res => {
-        let card = document.createElement("div");
-        let name = document.createTextNode('Username: ' + res.userName + ', ');
-        card.appendChild(name);
-        let comment = document.createTextNode('Title:' + res.postTitle + ', ');
-        card.appendChild(comment);
-        let post = document.createTextNode('Post:' + res.postBody);
-        card.appendChild(post);
-        let container = document.querySelector("#cardBody");
-        container.appendChild(card);
-      });
+      
+        for(var i=0; i<companyCardObject.length; i++){
+        
+          var card = $("<div>").addClass("card p-3 m-3").attr("style", "width: 18rem;").append(
+            $("<div>").addClass("card-title").text("Posts by: "+companyCardObject[i].userName),
+            $("<div>").addClass("card-subtitle").text("Titled: "+companyCardObject[i].postTitle),
+            $("<div>").addClass("card-text pt-3").text("Post: "+companyCardObject[i].postBody)
+           
+          );
+        
+        $(".cardRow").append(card);
+        
+
+        }
+      // });
 
 
 
     })
   }
 
-  
+
 
 
   // Create Company
@@ -121,7 +122,7 @@ onLoad()
       UserId: userId,
       CompanyId: passedCompanyId
     }
-    
+
     makePostCall(createPostObject);
 
     // Delete
@@ -129,7 +130,7 @@ onLoad()
 
   })
   // function createPostObject(companyName, postTextInput, userId, passedCompanyId) {
-   
+
   //   console.log("line 80 " +JSON.stringify(createPostObject));
   //   makePostCall(createPostObject)
   // }
@@ -137,8 +138,8 @@ onLoad()
     console.log(JSON.stringify(passedObject));
     // console.log(name);
     //  $.post("/api/post", passedObject).then(function(data){
-      // console.log("line 85 " + createPostObject);
-     
+    // console.log("line 85 " + createPostObject);
+
     $.ajax({
       url: "/api/post",
       data: passedObject,
@@ -154,24 +155,25 @@ onLoad()
       res.send(err);
     });
   }
-$("#companypageSearchButton").on("click", function(){
-  var companyPageSearch = $("#lookingForCompanyPage")
-  var companyPageSearchValue = companyPageSearch.val().trim();
-  window.location.href = "/company?name=" + companyPageSearchValue;
-  // checkForExistingComopany(companyPageSearchValue);
-})
-function checkForExistingComopany(isExistingCompany){
-  console.log("inside check for each");
+  $("#companypageSearchButton").on("click", function () {
+    var companyPageSearch = $("#lookingForCompanyPage")
+    var companyPageSearchValue = companyPageSearch.val().trim();
+    // window.location.href = "/company?name=" + companyPageSearchValue;
+    checkForExistingComopany(companyPageSearchValue);
+  })
+  function checkForExistingComopany(isExistingCompany) {
+    console.log("inside check for each");
+    console.log(isExistingCompany);
     $.ajax({
       url: "/api/company/" + isExistingCompany,
       method: "GET",
     }).then(function (data) {
       console.log(data)
-      if(!data.length){
-
+      if (!data.length) {
+        console.log("inside if statement")
         $("#noCompanyModal").modal("show");
       }
-      else{
+      else {
         window.location.href = "/company?name=" + isExistingCompany;
       }
     });
