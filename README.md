@@ -1,38 +1,37 @@
-# Project Starter
+# Speakeasy
+An exclusive, invitation-only application that allows users to share information and comments about companies or organizations. 
 
-In this activity we will add the provided boilerplate to group project repos.
+# Getting Started
+![Screenshot](/public/Images/screenshot.jpg)
+To utilize this application, please visit the link below. Please use the following login credentials: email: user@gmail.com password: userpassword. 
 
-## Instructions
+# Live Link
+[Visit on Heroku](https://floating-harbor-41249.herokuapp.com/)
 
-* Only one member of each group should complete this activity while the others watch.
+# Running Locally
+- First run <code>npm i</code> to install of the node modules
+- Navigate to the <code>db</code> folder within the directory
+- Either open MySQL WorkBench or run <code>mysql -u root -p</code> in the command line. 
+- Input your password 
+- Then while in <code>mysql></code>, run <code>source schema.sql</code> to create the table. 
+- Then to create seeds locally, please run the seeders file using node eeders/20191223212251-demo--user.js 
+- Feel free to update the seeds with your own data. 
+- Run <code>node server.js </code>
+- Visit the port utilized in the code (<code> PORT: 3030 </code>) on your local machine and enjoy!
 
-* Copy the entire [Unsolved](Unsolved) folder to another location on your computers &mdash; wherever you would like your local copy of the group project to be.
+# Built Using
+- Node.js
+- Express.js
+- jQuery
+- Passport.js
+- shortId npm pacakage
+- [BootStrap](http://getbootstrap.com/)
+- MySQL
+- JawsDB
 
-* Rename the copied "Unsolved" folder to the name of your project.
 
-* Open the copied project folder's `package.json` file and change its `name` property to the name of your project.
-
-* CD to the root of the copied project folder with your terminal and run the following commands:
-
-  ```
-  git init
-  git add .
-  git commit -m "Initial commit"
-  ```
-
-* Then copy the GitHub repo's remote SSH URL (the same URL you'd use to clone the repo).
-
-* Run the following commands in your terminal, replacing <remote-url> with your GitHub repo's remote SSH URL.
-
-  ```
-  git remote add origin <remote-url>
-  git push origin master
-  ```
-
-* If completed successfully you should see all of the files uploaded to GitHub.
-
-* All other group members should now clone the repo.
-
-* Discuss as a group:
-
-  * How would you now add changes to this project?
+## Authors
+- Jerrica VanAlstyne
+- Ceara Owre 
+- Paul Baker
+- Brandon Rosser
